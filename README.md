@@ -12,6 +12,7 @@ Things you may want to cover:
 
 - [Project "Renta fácil Colima"](#proyecto-renta-fácil-colima)
 - [Description](#project-description)
+- [Project requeriments](#project-requeriments)
 - How to Install and Run the Project.
 - How to Use the Project.
 - Credits
