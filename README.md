@@ -38,3 +38,51 @@ the MVP will focus on developing the core functionalities for two types of users
 * Property Owner (Landlord) User:
     * Property Listing: Property owners can create and publish listings for their rental properties. They will input property details, upload images, set rental terms, and specify contact information.
     * Manage Listings: Property owners can edit, update, or remove their property listings as needed.
+
+## Project requeriments
+
+### Functional requirements
+
+#### General user requirements
+* User registration: A user can create an account using their email through a registration form or by using a Google account.
+* User can select the type of user: Once a user has created an account, they will be asked to choose what kind of user they want to be, either a landlord or renter.
+* User login: Any user who has created an account before can use the same authentication method used during registration to log into the application.
+* Edit extra information: Once user have created an account, they need to provide additional information to activate their account.
+
+#### Renters requirements
+* Visualize houses list: The home page of the application for renters will display all the available houses for rent (using pagination).
+* Advanced search and filtering: Renters can use a quick search or apply filters to find a house that meets their requirements.
+* View house details: Renters can select a house to view its details.
+* Likes section: Users can "like" a house, and it will be saved in a separate section for easy access in the future.
+* Comments/reviews on houses: Renters can add comments or reviews to houses.
+* Landlord rating: Renters who have rented a house from a specific landlord can evaluate them after a month, helping other renters know about the landlord's reputation.
+* Pay house rent: Renters can use an implemented payment gateway to pay their rent to the landlord.
+* View landlords' profiles: Renters can access landlords' profiles to see their houses and reviews.
+#### Landlords requirements
+* Publish houses: Landlords can list their houses for rent along with the relevant information and the rental price.
+* Renters rating: Landlords can evaluate renters who are currently or have previously rented their houses for a minimum of 1 month.
+* Houses rating: Landlords can see how many views their houses have received, giving them an idea of their popularity.
+* Edit house data and status: Landlords can modify the information of their houses, as well as change the status to indicate whether they are "for rent," "rented," or "hidden."
+* View renters' profiles: Landlords can access renters' profiles to read reviews provided by other landlords.
+
+#### Houses requirements
+* Houses can be shared: Each house should have a share button that allows users to share them via a link.
+* House details can be viewed: Users can access and view the details of each house.
+* Houses should be visible based on their status: The visibility of houses should be determined by their status (e.g., "for rent," "rented," or "hidden").
+* Houses can have comments/reviews: Users can leave comments or reviews for each house.
+* Houses can be liked: Users have the option to "like" houses to show their interest or save them for future reference.
+
+### No functional requirements
+
+* Performance: The application should respond quickly to user interactions and have minimal loading times for various functionalities.
+* Reliability: The application must be reliable and available for use whenever users need it, with minimal downtime.
+* Security: The app should implement strong security measures to protect user data, prevent unauthorized access, and ensure data privacy.
+* Usability: The user interface should be intuitive, easy to navigate, and provide a seamless user experience.
+* Accessibility: The app should be designed to cater to users with disabilities, adhering to accessibility standards.
+* Aesthetic Design: The mobile application's user interface should be visually appealing, featuring modern and aesthetically pleasing design elements, color schemes, and typography to enhance user engagement and overall user experience.
+* Code quality: 
+    * The code must follow an object-oriented structure, adhering to best programming practices.
+Methods and functions should be small in size and follow the principles of single responsibility.
+    * Comprehensive unit tests must be included to ensure code quality and minimize errors.
+The SOLID principles (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) must be applied to ensure a modular, flexible, and easy-to-maintain codebase.
+* System platform: The application must be compatible with the Android operating system.
