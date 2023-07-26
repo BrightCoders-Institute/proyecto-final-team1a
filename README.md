@@ -13,10 +13,8 @@ Things you may want to cover:
 - [Project "Renta fácil Colima"](#proyecto-renta-fácil-colima)
 - [Description](#project-description)
 - [Project requeriments](#project-requeriments)
-- How to Install and Run the Project.
-- How to Use the Project.
-- Credits
-- Badges
+- [Project design](#user-interface-design)
+- [Database](#database-design)
 
 # Project: Renta fácil Colima
 ## Project description
@@ -87,3 +85,23 @@ Methods and functions should be small in size and follow the principles of singl
     * Comprehensive unit tests must be included to ensure code quality and minimize errors.
 The SOLID principles (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) must be applied to ensure a modular, flexible, and easy-to-maintain codebase.
 * System platform: The application must be compatible with the Android operating system.
+
+
+## User interface design
+
+![Design](design/RentaFacilColima.png)
+
+> [Figma design](design/RentafacilColima.fig)
+
+## Database design
+
+### Relational database
+
+![Database](database/RelationalDatabase.png)
+
+[You can see the diagram here](https://dbdiagram.io/d/64c055c102bd1c4a5eb13962)
+
+### No relational database
+
+![DatabaseNoRelantional](database/NoRelationalDatabase.png)
+
