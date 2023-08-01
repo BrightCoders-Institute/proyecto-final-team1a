@@ -25,6 +25,7 @@ function App() {
         width={150}
         shadow={true}
       />
+<<<<<<< HEAD
       <BasicButton
         text="Sign up"
         textSize={20}
@@ -63,6 +64,24 @@ function App() {
         shadowColor='#0f9444'
       />
       <GoogleButton onPress={() => console.log('Hello World')} />
+=======
+     <Textinput 
+      altura={40}
+      padding={10}
+      margen={10}
+      placeholder='First name'
+      value={nombre}
+      onChangeText={setNombre}
+     />
+      <Textinput 
+      altura={40}
+      padding={10}
+      margen={10}
+      placeholder='Second name'
+      value={apellidos}
+      onChangeText={setApellidos}
+     />
+>>>>>>> 3c69afa (Separate cosmetic styles from component)
     </SafeAreaView>
   );
 }
