@@ -64,7 +64,6 @@ function App() {
       value={apellidos}
       onChangeText={setApellidos}
      />
-     
     </SafeAreaView>
   );
 }
