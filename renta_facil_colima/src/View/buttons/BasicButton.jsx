@@ -2,20 +2,6 @@ import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import BasicButtonStyles from '../../styles/BasicButtonStyles';
 
-type BasicButtonProps = {
-  text: string;
-  textColor: string;
-  backgroundColor: string;
-  borderColor: string;
-  shadow: boolean;
-  elevation: number;
-  width: number;
-  height: number;
-  textSize: number;
-  shadowColor?: string;
-  onPress: () => void;
-};
-
 const BasicButton = ({
   text,
   onPress,
@@ -28,7 +14,7 @@ const BasicButton = ({
   elevation,
   height,
   width,
-}: BasicButtonProps) => {
+}) => {
   return (
     <View>
       <TouchableOpacity
@@ -43,7 +29,11 @@ const BasicButton = ({
             width: width,
           },
         ]}>
-        <Text style={[BasicButtonStyles.text, {color: textColor, fontSize: textSize}]}>
+        <Text
+          style={[
+            BasicButtonStyles.text,
+            {color: textColor, fontSize: textSize},
+          ]}>
           {text}
         </Text>
       </TouchableOpacity>
@@ -62,6 +52,5 @@ const BasicButton = ({
     </View>
   );
 };
-
 
 export default BasicButton;
