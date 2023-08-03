@@ -1,0 +1,175 @@
+{
+  "propiedades": [
+    {
+      "Nombre": "Casa Acogedora",
+      "Dirección": "Calle 123, Ciudad ABC",
+      "Número de habitaciones": 3,
+      "Número de baños": 2,
+      "Superficie": 120,
+      "Costo de renta mensual": 1000,
+      "Evaluación o calificación de la propiedad": 4.5
+    },
+    {
+      "Nombre": "Apartamento Moderno",
+      "Dirección": "Avenida XYZ, Ciudad DEF",
+      "Número de habitaciones": 2,
+      "Número de baños": 1,
+      "Superficie": 80,
+      "Costo de renta mensual": 800,
+      "Evaluación o calificación de la propiedad": 3.8
+    },
+    {
+      "Nombre": "Piso Céntrico",
+      "Dirección": "Plaza Principal, Ciudad JKL",
+      "Número de habitaciones": 1,
+      "Número de baños": 1,
+      "Superficie": 50,
+      "Costo de renta mensual": 500,
+      "Evaluación o calificación de la propiedad": 3.5
+    },
+    {
+      "Nombre": "Villa Espaciosa",
+      "Dirección": "Calle 789, Ciudad MNO",
+      "Número de habitaciones": 5,
+      "Número de baños": 4,
+      "Superficie": 200,
+      "Costo de renta mensual": 2000,
+      "Evaluación o calificación de la propiedad": 4.8
+    },
+    {
+      "Nombre": "Departamento Lujoso",
+      "Dirección": "Avenida ABCD, Ciudad PQR",
+      "Número de habitaciones": 3,
+      "Número de baños": 2,
+      "Superficie": 150,
+      "Costo de renta mensual": 1800,
+      "Evaluación o calificación de la propiedad": 4.6
+    },
+    {
+      "Nombre": "Casa Tranquila",
+      "Dirección": "Calle 987, Ciudad STU",
+      "Número de habitaciones": 2,
+      "Número de baños": 2,
+      "Superficie": 100,
+      "Costo de renta mensual": 1200,
+      "Evaluación o calificación de la propiedad": 4.3
+    },
+    {
+      "Nombre": "Penthouse Moderno",
+      "Dirección": "Avenida WXYZ, Ciudad VWX",
+      "Número de habitaciones": 4,
+      "Número de baños": 3,
+      "Superficie": 180,
+      "Costo de renta mensual": 2500,
+      "Evaluación o calificación de la propiedad": 4.9
+    },
+    {
+      "Nombre": "Apartamento Confortable",
+      "Dirección": "Calle 246, Ciudad YZ1",
+      "Número de habitaciones": 1,
+      "Número de baños": 1,
+      "Superficie": 60,
+      "Costo de renta mensual": 700,
+      "Evaluación o calificación de la propiedad": 3.9
+    },
+    {
+      "Nombre": "Casa Amplia",
+      "Dirección": "Calle 135, Ciudad 2AB",
+      "Número de habitaciones": 4,
+      "Número de baños": 3,
+      "Superficie": 160,
+      "Costo de renta mensual": 1800,
+      "Evaluación o calificación de la propiedad": 4.4
+    },
+    {
+      "Nombre": "Apartamento Elegante",
+      "Dirección": "Avenida 678, Ciudad 3CD",
+      "Número de habitaciones": 2,
+      "Número de baños": 2,
+      "Superficie": 90,
+      "Costo de renta mensual": 1000,
+      "Evaluación o calificación de la propiedad": 4.2
+    },
+    {
+      "Nombre": "Casa Rústica",
+      "Dirección": "Calle 912, Ciudad 4EF",
+      "Número de habitaciones": 3,
+      "Número de baños": 2,
+      "Superficie": 130,
+      "Costo de renta mensual": 1500,
+      "Evaluación o calificación de la propiedad": 4.1
+    },
+    {
+      "Nombre": "Apartamento Céntrico",
+      "Dirección": "Plaza Central, Ciudad 5GH",
+      "Número de habitaciones": 1,
+      "Número de baños": 1,
+      "Superficie": 70,
+      "Costo de renta mensual": 800,
+      "Evaluación o calificación de la propiedad": 3.7
+    },
+    {
+      "Nombre": "Villa Moderna",
+      "Dirección": "Calle 345, Ciudad 6IJ",
+      "Número de habitaciones": 5,
+      "Número de baños": 4,
+      "Superficie": 220,
+      "Costo de renta mensual": 2800,
+      "Evaluación o calificación de la propiedad": 4.9
+    },
+    {
+      "Nombre": "Departamento Acogedor",
+      "Dirección": "Avenida DEFG, Ciudad 7KL",
+      "Número de habitaciones": 2,
+      "Número de baños": 1,
+      "Superficie": 80,
+      "Costo de renta mensual": 900,
+      "Evaluación o calificación de la propiedad": 3.8
+    },
+    {
+      "Nombre": "Casa de Campo",
+      "Dirección": "Calle 567, Ciudad 8MN",
+      "Número de habitaciones": 4,
+      "Número de baños": 3,
+      "Superficie": 180,
+      "Costo de renta mensual": 2000,
+      "Evaluación o calificación de la propiedad": 4.5
+    },
+    {
+      "Nombre": "Piso Conveniente",
+      "Dirección": "Avenida HIJK, Ciudad 9OP",
+      "Número de habitaciones": 1,
+      "Número de baños": 1,
+      "Superficie": 60,
+      "Costo de renta mensual": 700,
+      "Evaluación o calificación de la propiedad": 3.6
+    },
+    {
+      "Nombre": "Casa Familiar",
+      "Dirección": "Calle 789, Ciudad QRS",
+      "Número de habitaciones": 3,
+      "Número de baños": 2,
+      "Superficie": 140,
+      "Costo de renta mensual": 1600,
+      "Evaluación o calificación de la propiedad": 4.3
+    },
+    {
+      "Nombre": "Apartamento Cómodo",
+      "Dirección": "Avenida TUVW, Ciudad STU",
+      "Número de habitaciones": 2,
+      "Número de baños": 2,
+      "Superficie": 100,
+      "Costo de renta mensual": 1200,
+      "Evaluación o calificación de la propiedad": 4.0
+    },
+    {
+      "Nombre": "Casa de Lujo",
+      "Dirección": "Calle 987, Ciudad VWX",
+      "Número de habitaciones": 5,
+      "Número de baños": 4,
+      "Superficie": 250,
+      "Costo de renta mensual": 3000,
+      "Evaluación o calificación de la propiedad": 4.8
+    }
+  ]
+}
