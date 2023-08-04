@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
-import BasicButtonStyles from '../../styles/BasicButtonStyles';
+import BasicButtonStyles from '../../Styles/BasicButtonStyle';
 
 const BasicButton = ({
   text,
