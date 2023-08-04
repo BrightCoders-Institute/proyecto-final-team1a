@@ -1,13 +1,13 @@
 import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import styles from '../styles/stylesCard';
+import styles from '../../Styles/CardStyle';
 
 const Card = ({propiedad}) => {
   return (
     <View style={[styles.item]}>
       <View style={styles.columna1}>
-        <Image style={styles.foto} source={require('../assets/img/casa.jpg')} />
+        <Image style={styles.foto} source={require('../../assets/img/casa.jpg')} />
       </View>
       <View style={styles.columna2}>
         <Text style={styles.title}>{propiedad.Nombre}</Text>
