@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import styles from '../styles/stylesCard';
+import styles from '../../styles/stylesCard';
 
 const Card = ({propiedad}) => {
   return (

@@ -32,7 +32,7 @@ const BasicButton = ({
         <Text
           style={[
             BasicButtonStyles.text,
-            {color: textColor, fontSize: textSize},
+            {color: textColor, fontSize:textSize},
           ]}>
           {text}
         </Text>
