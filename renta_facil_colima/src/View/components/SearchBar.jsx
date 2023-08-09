@@ -2,7 +2,7 @@ import React from 'react';
 import {TextInput, TouchableOpacity, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import SearchBarStyles from '../../styles/SearchBarStyles';
+import SearchBarStyles from '../../Styles/SearchBarStyle';
 
 const SearchBar = ({value, onChangeText, openFilters, searchFunction}) => {
   return (

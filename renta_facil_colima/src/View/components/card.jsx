@@ -7,7 +7,7 @@ const Card = ({propiedad}) => {
   return (
     <View style={[styles.item]}>
       <View style={styles.columna1}>
-        <Image style={styles.foto} source={require('../assets/img/casa.jpg')} />
+        <Image style={styles.foto} source={require('../../assets/img/casa.jpg')} />
       </View>
       <View style={styles.columna2}>
         <Text style={styles.title}>{propiedad.Nombre}</Text>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, SafeAreaView} from 'react-native';
-import propiedaes from '../data/propiedaes.json';
+import propiedaes from '../../data/propiedaes.json';
 import Card from './card';
 
 const Lista = () => {

@@ -5,7 +5,7 @@ const LogoRFC = ({ showAppName}) => {
     return (
     <View>
     <Image
-        source={require('../../Components/Logo/LogoRFC.png')}
+        source={require('../../assets/img/LogoRFC.png')}
         style={{width: 200, height: 200}} 
     />
     {showAppName && <Text style={styles.AppName}>Renta Facil</Text>}
