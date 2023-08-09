@@ -1,5 +1,5 @@
 import React from 'react'
-import TextinputStyle from '../../Styles/TextinputStyle'
+import TextinputStyle from '../../styles/TextinputStyle'
 import { View, Text, TextInput } from 'react-native'
 const Textinput = ({altura,padding,margen,onChangeText,value,placeholder}) => {
   return (
