@@ -12,6 +12,7 @@ import GoogleButton from './src/View/buttons/GoogleButton';
 import SignUpScreen from './src/View/Screens/SignUpScreen';
 
 function App() {
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#FFF', alignItems:'center'}}>
       <SignUpScreen/>

@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "firebase": "^10.1.0",
     "react": "18.2.0",
     "react-native": "0.72.3",
     "react-native-vector-icons": "^10.0.0"
