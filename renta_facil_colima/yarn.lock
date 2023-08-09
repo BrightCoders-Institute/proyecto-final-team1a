@@ -5375,6 +5375,13 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-drop-shadow@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/react-native-drop-shadow/-/react-native-drop-shadow-0.0.7.tgz"
+  integrity sha512-TsY0RpikcU/TwtMy3vyYEXxCDK6zdlptw8zZqoV4SASCo0tTsZSdq7fbQF1dsH0/49w7ts7CYEOTbqT6InecfQ==
+  dependencies:
+    logkitty "^0.7.1"
+
 react-native-vector-icons@^10.0.0:
   version "10.0.0"
   resolved "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-10.0.0.tgz"
@@ -5383,7 +5390,7 @@ react-native-vector-icons@^10.0.0:
     prop-types "^15.7.2"
     yargs "^16.1.1"
 
-react-native@*, react-native@0.72.3:
+react-native@*, react-native@>=0.61.5, react-native@0.72.3:
   version "0.72.3"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.72.3.tgz"
   integrity sha512-QqISi+JVmCssNP2FlQ4MWhlc4O/I00MRE1/GClvyZ8h/6kdsyk/sOirkYdZqX3+DrJfI3q+OnyMnsyaXIQ/5tQ==

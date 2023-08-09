@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.72.3",
+    "react-native-drop-shadow": "^0.0.7",
     "react-native-vector-icons": "^10.0.0"
   },
   "devDependencies": {
