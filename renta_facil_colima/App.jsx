@@ -1,21 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-import BasicButton from './src/View/buttons/BasicButton';
-import GoogleButton from './src/View/buttons/GoogleButton';
-import SignUpScreen from './src/View/Screens/SignUpScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import MainNavigation from './src/navigation/MainNavigation';
+import {
+  configureFonts,
+  Provider as PaperProvider,
+  DefaultTheme,
+} from 'react-native-paper';
+
+const fontsConfig = {
+  android: {
+    regular: {
+      fontFamily: 'ConcertOne-Regular',
+      fontWeight: 'normal',
+    },
+  },
+};
+
+const theme = {
+  ...DefaultTheme,
+  fonts: configureFonts(fontsConfig),
+};
 
 function App() {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#FFF', alignItems:'center'}}>
-      <SignUpScreen/>
-    </SafeAreaView>
+    <PaperProvider theme={theme}>
+      <NavigationContainer>
+        <MainNavigation />
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 
