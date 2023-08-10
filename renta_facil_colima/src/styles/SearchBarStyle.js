@@ -6,7 +6,6 @@ const SearchBarStyles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#058C42',
     borderWidth: 1,
-    width: 419,
     height: 49,
     alignItems: 'center',
     shadowColor: '#000',
