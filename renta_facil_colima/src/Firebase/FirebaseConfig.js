@@ -1,3 +1,5 @@
+import Config from "react-native-config";
+
 // Import the functions you need from the SDKs you need
 
 import { initializeApp } from "firebase/app";
@@ -15,19 +17,19 @@ import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyCXjC484Gu_Lgup-P8w2jcAgbCL6vjIwp0",
+  apiKey:Config.API_KEY ,
 
-  authDomain: "rentafacil-679ab.firebaseapp.com",
+  authDomain:Config.AUTH_DOMAIN ,
 
-  projectId: "rentafacil-679ab",
+  projectId:Config.PROJECT_ID ,
 
-  storageBucket: "rentafacil-679ab.appspot.com",
+  storageBucket:Config.STORAGE_BUCKET ,
 
-  messagingSenderId: "1025640860054",
+  messagingSenderId:Config.MESSAGING_SENDER_ID ,
 
-  appId: "1:1025640860054:web:53d479afd2c5bd69b1b5b7",
+  appId:Config.APP_ID ,
 
-  measurementId: "G-5JZDH70PWX"
+  measurementId:Config.MEASUREMENT_ID , 
 
 };
 
