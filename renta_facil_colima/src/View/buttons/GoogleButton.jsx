@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity} from 'react-native';
-import GoogleButtonStyles from '../../styles/GoogleButtonStyle';
+import GoogleButtonStyles from '../../Styles/GoogleButtonStyle';
 
 const GoogleButton = ({onPress}) => {
   return (
