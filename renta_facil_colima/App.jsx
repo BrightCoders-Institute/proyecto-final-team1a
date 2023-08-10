@@ -23,6 +23,7 @@ const theme = {
 };
 
 function App() {
+
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
