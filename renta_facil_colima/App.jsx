@@ -1,6 +1,7 @@
-import 'react-native-gesture-handler';
+//import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import FormAdd from './src/View/components/formAdd';
+/*import {NavigationContainer} from '@react-navigation/native';
 import MainNavigation from './src/navigation/MainNavigation';
 import {
   configureFonts,
@@ -21,14 +22,16 @@ const theme = {
   ...DefaultTheme,
   fonts: configureFonts(fontsConfig),
 };
-
+*/
 function App() {
   return (
+    <FormAdd />
+    /*
     <PaperProvider theme={theme}>
       <NavigationContainer>
         <MainNavigation />
       </NavigationContainer>
-    </PaperProvider>
+    </PaperProvider>*/
   );
 }
 
