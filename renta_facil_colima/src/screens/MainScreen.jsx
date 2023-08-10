@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 import LogoRFC from '../View/components/LogoRFC';
 import BasicButton from '../View/buttons/BasicButton';
 import styles from '../styles/MainScreenStyle';
