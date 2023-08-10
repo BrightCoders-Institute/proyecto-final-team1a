@@ -15,22 +15,22 @@ const UseReusableMainScreenState = () => {
     openModal();
   };
 
-  const handleSearchFilter = (functionSearchFilters) => {
+  const handleSearchFilter = functionSearchFilters => {
     functionSearchFilters();
   };
 
   const handleSearch = () => {
     // Future logic to search
-  }
+  };
 
-  const getHouses = async (screenType) =>{
+  const getHouses = async screenType => {
     // Future logic to get houser per type screen
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }
+  };
 
-  const screenColor = (screenType) => {
+  const screenColor = screenType => {
     switch (screenType) {
       case 'HOME':
         return '#60DB98';
@@ -39,7 +39,7 @@ const UseReusableMainScreenState = () => {
       case 'LIKES':
         return '#FF7477';
     }
-  }
+  };
 
   return {
     houses,
@@ -54,7 +54,7 @@ const UseReusableMainScreenState = () => {
     handleSearch,
     getHouses,
     screenColor,
-  }
-}
+  };
+};
 
 export default UseReusableMainScreenState;

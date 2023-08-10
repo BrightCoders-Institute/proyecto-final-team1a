@@ -41,7 +41,11 @@ const ReusableMainScreen = ({route}) => {
           />
         )}
         {screenType !== 'HOME' && (
-          <Text style={[ReusableMainScreenStyle.headerText, {color: screenColor(screenType)}]}>
+          <Text
+            style={[
+              ReusableMainScreenStyle.headerText,
+              {color: screenColor(screenType)},
+            ]}>
             {screenType === 'MYHOUSES' ? 'My houses' : 'My likes'}
           </Text>
         )}
