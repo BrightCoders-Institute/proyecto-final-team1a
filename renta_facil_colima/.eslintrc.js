@@ -5,5 +5,4 @@ module.exports = {
   rules: {
     // Agregar reglas personalizadas si es necesario
   },
-  requireConfigFile: false, // Desactivar la verificación de archivos de configuración de Babel
 };
