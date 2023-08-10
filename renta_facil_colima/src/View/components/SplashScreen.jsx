@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import LogoRFC from './LogoRFC';
 
 const SplashScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
-      <LogoRFC></LogoRFC>
+        <LogoRFC></LogoRFC>
       </View>
     </View>
   );
@@ -18,13 +18,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    
   },
   logo: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     bottom: 135,
   },
@@ -36,4 +35,3 @@ const styles = StyleSheet.create({
 });
 
 export default SplashScreen;
-
