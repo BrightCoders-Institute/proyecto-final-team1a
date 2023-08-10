@@ -2,8 +2,8 @@ import React, {useState } from 'react'
 import { TextInput, View, Alert } from 'react-native'
 import BasicButton from '../buttons/BasicButton'
 import GoogleButton from '../buttons/GoogleButton'
-import Loginstyles from '../../styles/LoginScreen'
-import LogoRFC from '../components/LogoRFC'
+import Loginstyles from '../../Styles/LoginScreen'
+import LogoRFC from '../Components/LogoRFC'
 
 const LoginScreen = () => {
 

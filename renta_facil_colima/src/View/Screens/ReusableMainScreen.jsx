@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import Lista from '../Components/List';
 import SearchBar from '../Components/SearchBar';
-import ReusableMainScreenStyle from '../../styles/ReusableMainScreenStyle';
+import ReusableMainScreenStyle from '../../Styles/ReusableMainScreenStyle';
 import FiltersModal from '../Components/FiltersModal';
 import {ActivityIndicator} from 'react-native-paper';
 
@@ -24,6 +24,8 @@ const ReusableMainScreen = ({route}) => {
     screenColor,
   } = UseReusableMainScreenState();
 
+  getHouses(screenType);
+  
   return (
     <View style={ReusableMainScreenStyle.mainContainer}>
       <FiltersModal
