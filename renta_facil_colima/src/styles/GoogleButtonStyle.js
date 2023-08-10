@@ -15,7 +15,7 @@ const GoogleButtonStyles = StyleSheet.create({
   },
   text: {
     marginLeft: 10,
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color:'#3B5547',
