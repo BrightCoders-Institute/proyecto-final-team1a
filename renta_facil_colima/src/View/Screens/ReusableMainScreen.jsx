@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import Lista from '../Components/List';
-import SearchBar from '../Components/SearchBar';
-import ReusableMainScreenStyle from '../../Styles/ReusableMainScreenStyle';
-import FiltersModal from '../Components/FiltersModal';
+import Lista from '../components/List';
+import SearchBar from '../components/SearchBar';
+import ReusableMainScreenStyle from '../../styles/ReusableMainScreenStyle';
+import FiltersModal from '../components/FiltersModal';
 import {ActivityIndicator} from 'react-native-paper';
 
 import UseReusableMainScreenState from '../../hooks/UseReusableMainScreenState';

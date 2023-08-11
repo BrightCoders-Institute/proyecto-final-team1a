@@ -1,10 +1,10 @@
 import React from 'react';
 import {View} from 'react-native';
-import LogoRFC from '../View/components/LogoRFC';
-import BasicButton from '../View/buttons/BasicButton';
-import styles from '../styles/MainScreenStyle';
+import LogoRFC from '../components/LogoRFC';
+import BasicButton from '../buttons/BasicButton';
+import styles from '../../styles/MainScreenStyle';
 
-export const MainScreen = () => {
+const MainScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
@@ -22,4 +22,6 @@ export const MainScreen = () => {
     </View>
   );
 };
+
+export default MainScreen;
 
