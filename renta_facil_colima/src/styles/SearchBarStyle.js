@@ -23,6 +23,7 @@ const SearchBarStyles = StyleSheet.create({
     marginLeft: 10,
     width: '74%',
     fontSize: 24,
+    fontFamily: 'ConcertOne-Regular'
   },
   icon: {
     marginRight: 8,
