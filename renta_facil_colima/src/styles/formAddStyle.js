@@ -51,8 +51,34 @@ const styleForm = StyleSheet.create({
     alignItems: 'center',
     marginTop: 15,
     width: 180,
-    height: 25,
+    height: 30,
     borderRadius: 10,
+    color: '#fff',
+    padding: 5,
+    fontWeight: 'bold',
+  },
+  btn: {
+    fontSize: 12,
+    color: 'black',
+  },
+  containerBtnSend: {
+    alignItems: 'center',
+  },
+  btnSend: {
+    backgroundColor: '#3B5547',
+    alignItems: 'center',
+    marginTop: 15,
+    width: 180,
+    height: 30,
+    borderRadius: 10,
+    color: '#fff',
+    padding: 5,
+    fontWeight: 'bold',
+  },
+  iconClose: {
+    position: 'absolute',
+    top: -20,
+    right: -20,
   },
 });
 
