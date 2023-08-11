@@ -5,7 +5,20 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DropDow from './dropDown';
 import FormSendHouse from '../../hooks/formSendHouse';
 const FormAdd = () => {
-  const {toggleVisibility, isVisible} = FormSendHouse();
+  const {
+    toggleVisibility,
+    setTitle,
+    setLocation,
+    setRooms,
+    setDescription,
+    setPrice,
+    isVisible,
+    titlle,
+    lcoation,
+    rooms,
+    Description,
+    price,
+  } = FormSendHouse();
   return (
     <View style={styleForm.mainContainer}>
       {isVisible && (
@@ -24,11 +37,13 @@ const FormAdd = () => {
                 keyboardType="email-address"
                 autoCapitalize="none"
                 placeholderTextColor={'black'}
+                onChangeText={setTitle}
               />
             </View>
             <View>
               <Text>Ubicacion</Text>
               <TextInput
+                onChange={setLocation}
                 style={styleForm.inputs}
                 keyboardType="email-address"
                 autoCapitalize="none"
@@ -43,6 +58,7 @@ const FormAdd = () => {
               <View style={styleForm.cuartos}>
                 <Text>Cuartos</Text>
                 <TextInput
+                  onChangeText={setRooms}
                   style={styleForm.inputs}
                   keyboardType="email-address"
                   autoCapitalize="none"
@@ -54,6 +70,7 @@ const FormAdd = () => {
             <View>
               <Text>Descripción</Text>
               <TextInput
+                onChangeText={setDescription}
                 style={styleForm.inputs}
                 keyboardType="email-address"
                 autoCapitalize="none"
@@ -64,6 +81,7 @@ const FormAdd = () => {
               <View style={styleForm.precioContainer}>
                 <Text>Precio</Text>
                 <TextInput
+                  onChangeText={setPrice}
                   style={styleForm.inputs}
                   keyboardType="email-address"
                   autoCapitalize="none"

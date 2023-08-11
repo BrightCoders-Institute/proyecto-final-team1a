@@ -23,6 +23,7 @@ const styleForm = StyleSheet.create({
     backgroundColor: 'gray',
   },
   inputs: {
+    color: 'black',
     backgroundColor: '#fff',
     borderRadius: 10,
   },
