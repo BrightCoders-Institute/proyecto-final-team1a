@@ -16,9 +16,8 @@ const GoogleButtonStyles = StyleSheet.create({
   text: {
     marginLeft: 10,
     fontSize: 24,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color:'#3B5547',
+    fontFamily: 'ConcertOne-Regular',
+    color:'#8C8C8C',
   },
   icon: {
     width: 50,

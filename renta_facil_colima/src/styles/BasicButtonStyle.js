@@ -13,8 +13,8 @@ const BasicButtonStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontWeight: 'bold',
     letterSpacing: 0.25,
+    fontFamily: 'ConcertOne-Regular',
   },
   shadow: {
     alignSelf: 'center',

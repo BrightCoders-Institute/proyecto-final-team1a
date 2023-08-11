@@ -1,6 +1,6 @@
 import React from 'react';
 import {Modal, Text, View} from 'react-native';
-import FiltersModalStyle from '../../Styles/FiltersModalStyle';
+import FiltersModalStyle from '../../styles/FiltersModalStyle';
 import Textinput from './Textinput';
 import UseFiltersModalState from '../../hooks/UseFiltersModalState';
 import BasicButton from '../buttons/BasicButton';
