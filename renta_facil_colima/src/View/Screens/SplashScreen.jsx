@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, } from 'react-native';
-import LogoRFC from './LogoRFC';
+import LogoRFC from '../components/LogoRFC';
 import styles from '../../styles/SplashScreenStyle';
 
 const SplashScreen = () => {

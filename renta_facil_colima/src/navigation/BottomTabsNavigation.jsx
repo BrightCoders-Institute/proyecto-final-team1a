@@ -1,19 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
+import ReusableMainScreen from '../View/Screens/ReusableMainScreen';
 
 const Tab = createMaterialBottomTabNavigator();
-
-const TemporalScreenComponent = () => {
-  return(
-    <View>
-      <Text>Home</Text>
-    </View>
-  )
-};
 
 const BottomTabsNavigation = () => {
   return (
@@ -26,17 +18,18 @@ const BottomTabsNavigation = () => {
       shifting={true}>
       <Tab.Screen
         name="Home"
-        component={TemporalScreenComponent} // Cambiar por HomeScreen cuando este
+        component={ReusableMainScreen} // Cambiar por HomeScreen cuando este
         options={{
           tabBarColor: '#60DB98',
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="home" color={color} size={20} />
           ),
         }}
+        initialParams={{screenType: 'HOME'}}
       />
       <Tab.Screen
         name="MyHouses"
-        component={TemporalScreenComponent} // Cambiar por MyHousesScreen cuando este 
+        component={ReusableMainScreen} // Cambiar por MyHousesScreen cuando este 
         options={{
           tabBarColor: '#84A9C0',
           tabBarLabel: 'My houses',
@@ -44,17 +37,19 @@ const BottomTabsNavigation = () => {
             <FontAwesome5 name="house-user" color={color} size={20} />
           ),
         }}
+        initialParams={{screenType: 'MYHOUSES'}}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Likes"
-        component={LikesScreen}
+        component={ReusableMainScreen}
         options={{
           tabBarColor: '#FF7477',
           tabBarIcon: ({color}) => (
             <FontAwesome name="heart" color={color} size={22} />
           ),
         }}
-      /> Descomentar cuando este la LikesScreen*/}
+        initialParams={{screenType: 'LIKES'}}
+      /> 
       {/* <Tab.Screen
         name="Profile"
         component={ProfileScreen}
