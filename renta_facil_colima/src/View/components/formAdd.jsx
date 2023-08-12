@@ -31,7 +31,7 @@ const FormAdd = () => {
               </TouchableOpacity>
             </View>
             <View>
-              <Text>Titulo</Text>
+              <Text style={styleForm.text}>Titulo</Text>
               <TextInput
                 style={styleForm.inputs}
                 keyboardType="email-address"
@@ -41,7 +41,7 @@ const FormAdd = () => {
               />
             </View>
             <View>
-              <Text>Ubicacion</Text>
+              <Text style={styleForm.text}>Ubicacion</Text>
               <TextInput
                 onChange={setLocation}
                 style={styleForm.inputs}
@@ -52,11 +52,11 @@ const FormAdd = () => {
             </View>
             <View style={styleForm.doubleInputs}>
               <View style={styleForm.tipo}>
-                <Text>Tipo</Text>
+                <Text style={styleForm.text}>Tipo</Text>
                 <DropDow />
               </View>
               <View style={styleForm.cuartos}>
-                <Text>Cuartos</Text>
+                <Text style={styleForm.text}>Cuartos</Text>
                 <TextInput
                   onChangeText={setRooms}
                   style={styleForm.inputs}
@@ -66,9 +66,8 @@ const FormAdd = () => {
                 />
               </View>
             </View>
-
             <View>
-              <Text>Descripción</Text>
+              <Text style={styleForm.text}> Descripción</Text>
               <TextInput
                 onChangeText={setDescription}
                 style={styleForm.inputs}
@@ -79,7 +78,7 @@ const FormAdd = () => {
             </View>
             <View style={styleForm.doubleInputs}>
               <View style={styleForm.precioContainer}>
-                <Text>Precio</Text>
+                <Text style={styleForm.text}>Precio</Text>
                 <TextInput
                   onChangeText={setPrice}
                   style={styleForm.inputs}
@@ -89,7 +88,7 @@ const FormAdd = () => {
                 />
               </View>
               <View style={styleForm.iconContainer}>
-                <Text>Etiqueta</Text>
+                <Text style={styleForm.text}>Etiqueta</Text>
                 <TouchableOpacity>
                   <Icon
                     size={50}
