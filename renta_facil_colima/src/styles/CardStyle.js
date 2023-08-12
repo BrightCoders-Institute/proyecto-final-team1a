@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const styles = StyleSheet.create({
   item: {
     borderRadius: 10,
-    backgroundColor: '#f5fdff',
+    backgroundColor: Colors.AliceBlue,
     marginVertical: 8,
     marginHorizontal: 16,
     padding: 10,
@@ -24,12 +25,12 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   title: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
     fontWeight: 'bold',
   },
   addres: {
-    color: '#2d2d2d',
+    color: Colors.Jet,
     fontSize: 15,
   },
   containerIcons: {
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 15,
     fontWeight: 'bold',
-    color: 'black',
+    color: Colors.Black,
   },
   heartAndRentContainer: {
     flexDirection: 'row',
@@ -52,16 +53,16 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 30,
-    backgroundColor: '#00b074',
+    backgroundColor: Colors.Jade,
     justifyContent: 'center',
     alignItems: 'center',
     right: 0,
   },
   heart: {
-    color: 'white',
+    color: Colors.White,
   },
   rent: {
-    color: 'black',
+    color: Colors.Black,
     fontWeight: 'bold',
     fontSize: 16,
   },

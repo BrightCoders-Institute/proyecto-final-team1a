@@ -1,13 +1,15 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
+
 const CommentComponentStyles = StyleSheet.create({
   container: {
     alignSelf: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: Colors.White,
     borderWidth: 1,
-    borderColor: '#058C42',
-    backgroundColor: '#fff',
+    borderColor: Colors.SeaGreen,
+    backgroundColor: Colors.White,
     borderRadius: 10,
-    shadowColor: 'black',
+    shadowColor: Colors.Black,
     shadowOpacity: 0.3,
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 5,
@@ -18,7 +20,7 @@ const CommentComponentStyles = StyleSheet.create({
     fontSize: 28,
     paddingTop: 3,
     marginLeft: 8,
-    color: '#000',
+    color: Colors.Black,
     fontFamily: 'ConcertOne-Regular',
 
   },

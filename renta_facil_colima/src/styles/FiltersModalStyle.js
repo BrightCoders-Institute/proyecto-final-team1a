@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const FiltersModalStyle = StyleSheet.create({
   inputCol: {
@@ -16,16 +17,16 @@ const FiltersModalStyle = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#0c7838',
+    color: Colors.DarkSpringGreen,
     marginHorizontal: 16,
   },
   modalView: {
     alignSelf: 'center',
-    backgroundColor: '#16DB65',
+    backgroundColor: Colors.Malachite,
     borderRadius: 10,
     margin: 20,
     padding: 35,
-    shadowColor: '#000',
+    shadowColor: Colors.Black,
     shadowOffset: {
       width: 0,
       height: 2,

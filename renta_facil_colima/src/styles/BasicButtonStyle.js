@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import Colors from './colors';
 
 const BasicButtonStyles = StyleSheet.create({
   button: {
     borderWidth: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.White,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,

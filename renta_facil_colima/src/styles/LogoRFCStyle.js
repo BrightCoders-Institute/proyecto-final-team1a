@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const LogoRFCStyle = StyleSheet.create({
   AppName: {
     fontSize: 36,
     fontFamily: 'ConcertOne-Regular',
-    color: '#058C42',
+    color: Colors.SeaGreen,
     textTransform: 'uppercase',
     marginTop: 50,
   },

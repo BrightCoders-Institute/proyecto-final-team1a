@@ -1,14 +1,16 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
+
 const SearchBarStyles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.White,
     flexDirection: 'row',
     borderRadius: 10,
-    borderColor: '#058C42',
+    borderColor: Colors.SeaGreen,
     borderWidth: 1,
     height: 49,
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: Colors.Black,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -18,7 +20,7 @@ const SearchBarStyles = StyleSheet.create({
     elevation: 8,
   },
   input: {
-    color: '#000',
+    color: Colors.Black,
     height: '100%',
     marginLeft: 10,
     width: '74%',

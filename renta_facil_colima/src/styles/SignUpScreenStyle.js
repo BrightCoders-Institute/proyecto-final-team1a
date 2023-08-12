@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const SignUpScreenStyle = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.White,
     flex: 1,
   },
   titleText: {
-    color: '#058C42',
+    color: Colors.SeaGreen,
     fontFamily: 'ConcertOne-Regular',
     fontSize: 36,
     textAlign: 'center',
@@ -14,12 +15,12 @@ const SignUpScreenStyle = StyleSheet.create({
   },
   card:{
     alignSelf: 'center',
-    backgroundColor: '#C6D4CD',
+    backgroundColor: Colors.AshGray,
     width: 380,
     height: 470,
     marginTop: 40,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: Colors.Black,
     shadowOffset: {
       width: 0,
       height: 5,

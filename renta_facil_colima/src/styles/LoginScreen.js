@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const Loginstyles = StyleSheet.create({
   buttonsContainer:{
     marginVertical: 35,
   },
   inputs: {
-    color: 'black',
+    color: Colors.Black,
     overflow: 'hidden',
     textAlign: 'center',
     fontFamily: 'ConcertOne-Regular',
@@ -16,7 +17,7 @@ const Loginstyles = StyleSheet.create({
     marginTop:25, 
     borderWidth: 1,
     borderColor: 'green',
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 8,
     width: '80%',
     height: 49,
@@ -27,7 +28,7 @@ const Loginstyles = StyleSheet.create({
     justifyContent: 'flex-end',
     paddingHorizontal: 16,
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: Colors.White,
   },
   logoContainer: {
     marginBottom: 20,
