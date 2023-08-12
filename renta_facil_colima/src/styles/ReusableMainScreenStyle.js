@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const ReusableMainScreenStyle = StyleSheet.create({
   mainContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.White,
   },
   headerContainer: {
     alignSelf: 'center',
@@ -12,10 +13,10 @@ const ReusableMainScreenStyle = StyleSheet.create({
   headerText: {
     fontSize: 40,
     fontFamily: 'ConcertOne-Regular',
-    color: '#000',
+    color: Colors.Black,
   },
   loadingContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.White,
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',

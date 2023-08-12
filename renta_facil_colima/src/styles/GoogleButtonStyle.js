@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
+import Colors from './colors';
+
 const GoogleButtonStyles = StyleSheet.create({
   button: {
     borderWidth: 1,
-    borderColor: '#3B5547',
-    backgroundColor: '#fff',
+    borderColor: Colors.FeldGrau,
+    backgroundColor: Colors.White,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
@@ -16,9 +18,8 @@ const GoogleButtonStyles = StyleSheet.create({
   text: {
     marginLeft: 10,
     fontSize: 24,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color:'#3B5547',
+    fontFamily: 'ConcertOne-Regular',
+    color:Colors.BattleShipGrey,
   },
   icon: {
     width: 50,

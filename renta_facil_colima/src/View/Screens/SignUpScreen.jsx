@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 import Textinput from '../components/Textinput';
 import BasicButton from '../buttons/BasicButton';
 import SignUpScreenState from '../../hooks/SignUpScreenState';
+import SignUpScreenStyle from '../../styles/SignUpScreenStyle';
 const SignUpScreen = () => {
   const {
     firstName,
@@ -19,37 +20,13 @@ const SignUpScreen = () => {
   } = SignUpScreenState();
 
   return (
-    <View>
-      <Text
-        style={{
-          color: '#058C42',
-          fontFamily: 'ConcertOne-Regular',
-          fontSize: 36,
-          textAlign: 'center',
-          marginTop: 40,
-        }}>
-        SIGN UP
-      </Text>
-      <View
-        style={{
-          backgroundColor: '#C6D4CD',
-          width: 380,
-          height: 420,
-          marginTop: 40,
-          borderRadius: 10,
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 5,
-          },
-          shadowOpacity: 0.36,
-          shadowRadius: 6.68,
-          elevation: 11,
-        }}>
+    <View style={SignUpScreenStyle.container}>
+      <Text style={SignUpScreenStyle.titleText}>SIGN UP</Text>
+      <View style={SignUpScreenStyle.card}>
         <Textinput
           placeholder="First name"
           margen={20}
-          altura={40}
+          altura={49}
           padding={10}
           value={firstName}
           onChangeText={setFirstName}
@@ -57,7 +34,7 @@ const SignUpScreen = () => {
         <Textinput
           placeholder="Last name"
           margen={20}
-          altura={40}
+          altura={49}
           padding={10}
           value={lastName}
           onChangeText={setLastName}
@@ -65,7 +42,7 @@ const SignUpScreen = () => {
         <Textinput
           placeholder="Email"
           margen={20}
-          altura={40}
+          altura={49}
           padding={10}
           value={email}
           onChangeText={setEmail}
@@ -73,7 +50,7 @@ const SignUpScreen = () => {
         <Textinput
           placeholder="Password"
           margen={20}
-          altura={40}
+          altura={49}
           padding={10}
           value={password}
           onChangeText={setPassword}
@@ -81,18 +58,14 @@ const SignUpScreen = () => {
         <Textinput
           placeholder="Phone number"
           margen={20}
-          altura={40}
+          altura={49}
           padding={10}
           value={phoneNumber}
           onChangeText={setPhoneNumber}
         />
       </View>
       <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginTop: 40,
-        }}>
+        style={SignUpScreenStyle.buttonsContainer}>
         <BasicButton
           text={'Cancel'}
           textSize={20}
@@ -103,12 +76,14 @@ const SignUpScreen = () => {
         />
         <BasicButton
           text={'Sing Up'}
+          backgroundColor='#FFF'
           textSize={20}
           textColor={'#00D25D'}
           height={59}
           width={150}
           borderColor={'#058C42'}
-          onPress={()=>validateForm()}
+          shadow={true}
+          onPress={() => validateForm()}
         />
       </View>
     </View>

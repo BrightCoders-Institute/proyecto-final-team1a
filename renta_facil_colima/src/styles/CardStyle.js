@@ -1,9 +1,10 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const styles = StyleSheet.create({
   item: {
     borderRadius: 10,
-    backgroundColor: '#E9F2F8',
+    backgroundColor: Colors.AliceBlue,
     marginVertical: 8,
     marginHorizontal: 16,
     padding: 10,
@@ -11,32 +12,37 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   foto: {
-    top: 15,
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: 10,
   },
   columna1: {
     flex: 1,
-    width: 100,
-    alignItems: 'center',
+    paddingLeft: 10,
+    paddingBottom: 10,
   },
   columna2: {
     flex: 2,
   },
   title: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
+    fontWeight: 'bold',
   },
-  addres: {color: 'black'},
+  addres: {
+    color: Colors.Jet,
+    fontSize: 15,
+  },
   containerIcons: {
-    flexDirection: 'row', // Mostrar los elementos en una sola línea
+    flexDirection: 'row',
     alignItems: 'center',
   },
   textIcons: {
-    marginRight: 15, // Agregar un pequeño espacio entre los íconos y los textos
+    marginRight: 15,
+    marginLeft: 8,
     fontSize: 15,
-    color: 'black',
+    fontWeight: 'bold',
+    color: Colors.Black,
   },
   heartAndRentContainer: {
     flexDirection: 'row',
@@ -47,16 +53,18 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 30,
-    backgroundColor: 'green',
+    backgroundColor: Colors.Jade,
     justifyContent: 'center',
     alignItems: 'center',
     right: 0,
   },
   heart: {
-    color: 'white',
+    color: Colors.White,
   },
   rent: {
-    color: 'black',
+    color: Colors.Black,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 

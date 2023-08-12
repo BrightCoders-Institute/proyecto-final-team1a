@@ -1,28 +1,37 @@
 import {StyleSheet} from 'react-native';
+import Colors from './colors';
 
 const Loginstyles = StyleSheet.create({
-  inputs: {
-    color: 'black',
-    overflow: 'hidden',
-    width: '100%',
-    textAlign: 'center'
+  buttonsContainer:{
+    marginVertical: 35,
   },
-  shadow: {    alignItems: 'center',
+  inputs: {
+    color: Colors.Black,
+    overflow: 'hidden',
+    textAlign: 'center',
+    fontFamily: 'ConcertOne-Regular',
+    fontSize: 24,
+  },
+  shadow: {    
+    alignItems: 'center',
     marginTop:25, 
     borderWidth: 1,
-
     borderColor: 'green',
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 8,
-    height: 40,
-    width:280,
+    width: '80%',
+    height: 49,
     elevation: 10,
   },
   container: {
     alignItems: 'center',
-    justifyContent: 'center', // Centrar contenido verticalmente
+    justifyContent: 'flex-end',
     paddingHorizontal: 16,
     flex: 1,
+    backgroundColor: Colors.White,
+  },
+  logoContainer: {
+    marginBottom: 20,
   },
 });
 export default Loginstyles;
