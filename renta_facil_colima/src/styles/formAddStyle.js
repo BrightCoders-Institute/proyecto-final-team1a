@@ -10,11 +10,12 @@ const styleForm = StyleSheet.create({
   },
   text: {
     color: 'black',
+    fontFamily: 'ConcertOne-Regular',
   },
   title: {
     color: 'black',
     fontSize: 30,
-    fontWeight: 'bold',
+    fontFamily: 'ConcertOne-Regular',
   },
   formContainer: {
     marginTop: 50,
@@ -60,6 +61,7 @@ const styleForm = StyleSheet.create({
   },
   btn: {
     fontSize: 12,
+    fontFamily: 'ConcertOne-Regular',
     color: 'black',
   },
   containerBtnSend: {
