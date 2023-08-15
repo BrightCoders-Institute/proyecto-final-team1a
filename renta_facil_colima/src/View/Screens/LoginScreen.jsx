@@ -4,7 +4,7 @@ import BasicButton from '../buttons/BasicButton';
 import GoogleButton from '../buttons/GoogleButton';
 import Loginstyles from '../../styles/LoginScreen';
 import LogoRFC from '../components/LogoRFC';
-
+import GoogleSignUp from '../../hooks/GoogleSingUp';
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,7 +77,7 @@ const LoginScreen = () => {
           shadow={true}
         />
 
-        <GoogleButton onPress={() => console.log('Hello World')} />
+        <GoogleButton onPress={GoogleSignUp}/>
       </View>
     </View>
   );
