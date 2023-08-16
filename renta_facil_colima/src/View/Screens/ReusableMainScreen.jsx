@@ -20,11 +20,8 @@ const ReusableMainScreen = ({route}) => {
     openFiltersModal,
     handleSearchFilter,
     handleSearch,
-    getHouses,
     screenColor,
-  } = UseReusableMainScreenState();
-
-  getHouses(screenType);
+  } = UseReusableMainScreenState(screenType);
   
   return (
     <View style={ReusableMainScreenStyle.mainContainer}>
@@ -56,12 +53,12 @@ const ReusableMainScreen = ({route}) => {
         <View style={ReusableMainScreenStyle.loadingContainer}>
           <ActivityIndicator
             animating={true}
-            color={screenColor(screenType)}
+            color={screenColor()}
             size="large"
           />
         </View>
       )}
-      {!loading && <Lista />}
+      {!loading && <Lista data={houses}/>}
     </View>
   );
 };
