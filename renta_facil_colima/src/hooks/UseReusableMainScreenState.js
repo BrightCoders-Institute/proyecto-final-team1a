@@ -1,11 +1,34 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import UseFiltersModalState from './UseFiltersModalState';
+import GetDataFromFirebase from './GetDataFromFirebase';
 
-const UseReusableMainScreenState = () => {
+const UseReusableMainScreenState = screenType => {
+  const {GetDataFromCollection} = GetDataFromFirebase();
   const [houses, setHouses] = useState([]);
   const [search, setSearch] = useState('');
   const {modalVisible, openModal, closeModal} = UseFiltersModalState();
   const [loading, setLoading] = useState(true);
+
+  const functionsGetData = {
+    HOME: GetDataFromCollection('Houses'),
+    MYHOUSES: GetDataFromCollection('Houses'), //Replace for my houses when function is ready
+    LIKES: GetDataFromCollection('Houses'), // Replace for my likes when function is ready
+  };
+
+  const homeColors = {
+    HOME: '#60DB98',
+    MYHOUSES: '#84A9C0',
+    LIKES: '#FF7477',
+  };
+
+  useEffect(() => {
+    const getHouses = async () => {
+      const response = await functionsGetData[screenType];
+      setHouses(response);
+      setLoading(false);
+    };
+    getHouses();
+  }, []);
 
   const cancelModalFunction = () => {
     closeModal();
@@ -23,22 +46,8 @@ const UseReusableMainScreenState = () => {
     // Future logic to search
   };
 
-  const getHouses = async screenType => {
-    // Future logic to get houser per type screen
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
-
-  const screenColor = screenType => {
-    switch (screenType) {
-      case 'HOME':
-        return '#60DB98';
-      case 'MYHOUSES':
-        return '#84A9C0';
-      case 'LIKES':
-        return '#FF7477';
-    }
+  const screenColor = () => {
+    return homeColors[screenType];
   };
 
   return {
@@ -52,7 +61,6 @@ const UseReusableMainScreenState = () => {
     openFiltersModal,
     handleSearchFilter,
     handleSearch,
-    getHouses,
     screenColor,
   };
 };
