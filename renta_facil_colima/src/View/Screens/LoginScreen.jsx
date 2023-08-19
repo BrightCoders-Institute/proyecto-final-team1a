@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {TextInput, View, Alert} from 'react-native';
+import React from 'react';
+import {Text, TextInput, View} from 'react-native';
 import BasicButton from '../buttons/BasicButton';
 import GoogleButton from '../buttons/GoogleButton';
 import Loginstyles from '../../styles/LoginScreen';
 import LogoRFC from '../components/LogoRFC';
 import GoogleSignUp from '../../hooks/GoogleSingUp';
 import UseLoginScreenState from '../../hooks/UseLoginScreenState';
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const {
     email,
     setEmail,
@@ -16,6 +16,13 @@ const LoginScreen = () => {
     emptyPassword,
     isEmpty,
   } = UseLoginScreenState();
+
+  const googleSign = async () => {
+    const response = await GoogleSignUp();
+    if (response) {
+      navigation.navigate('HomeTabs');
+    }
+  };
   return (
     <View style={Loginstyles.container}>
       <View style={Loginstyles.logoContainer}>
@@ -46,7 +53,6 @@ const LoginScreen = () => {
           placeholderTextColor="#8C8C8C"
         />
       </View>
-
       <View style={Loginstyles.buttonsContainer}>
         <BasicButton
           text="Login"
@@ -60,7 +66,16 @@ const LoginScreen = () => {
           width={308}
           shadow={true}
         />
-        <GoogleButton onPress={GoogleSignUp}/>
+        <GoogleButton onPress={googleSign} />
+        <Text style={Loginstyles.text}>
+          Do not have an account?
+          <Text
+            style={Loginstyles.hiperLinkText}
+            onPress={() => navigation.goBack()}>
+            {' '}
+            go back to start
+          </Text>
+        </Text>
       </View>
     </View>
   );

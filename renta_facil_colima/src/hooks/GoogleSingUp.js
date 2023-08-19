@@ -1,25 +1,21 @@
-import {initializeApp} from 'firebase/app';
-import {firebaseConfig} from '../Firebase/FirebaseConfig';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { getAuth, signInWithCredential } from "firebase/auth";
+import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Config from 'react-native-config';
-initializeApp(firebaseConfig);
+import {Alert} from 'react-native';
 
 GoogleSignin.configure({
   webClientId: Config.WEB_CLIENT_ID,
 });
 
-  const GoogleSignUp = async () => {
-    try {
-     await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      const googleCredential = GoogleAuthProvider.credential(userInfo.idToken);
-      const auth = getAuth();
-      const userCredential = await signInWithCredential(auth, googleCredential);
-      const user = userCredential.user;
-      console.log('User:', user);
-    } catch (error) {
-      console.error('Google Sign-In error:', error);
-    }
-  };
-  export default GoogleSignUp;
+const GoogleSignUp = async () => {
+  try {
+    await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+    const {idToken} = await GoogleSignin.signIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    const user = auth().signInWithCredential(googleCredential);
+    return user;
+  } catch (error) {
+    Alert.alert('Error', error.message);
+  }
+};
+export default GoogleSignUp;

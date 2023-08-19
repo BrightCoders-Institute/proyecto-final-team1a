@@ -4,7 +4,7 @@ import Textinput from '../components/Textinput';
 import BasicButton from '../buttons/BasicButton';
 import SignUpScreenState from '../../hooks/SignUpScreenState';
 import SignUpScreenStyle from '../../styles/SignUpScreenStyle';
-const SignUpScreen = () => {
+const SignUpScreen = ({navigation}) => {
   const {
     firstName,
     lastName,
@@ -64,8 +64,7 @@ const SignUpScreen = () => {
           onChangeText={setPhoneNumber}
         />
       </View>
-      <View
-        style={SignUpScreenStyle.buttonsContainer}>
+      <View style={SignUpScreenStyle.buttonsContainer}>
         <BasicButton
           text={'Cancel'}
           textSize={20}
@@ -73,10 +72,11 @@ const SignUpScreen = () => {
           height={59}
           width={150}
           borderColor={'#B1F1D1'}
+          onPress={() => navigation.goBack()}
         />
         <BasicButton
           text={'Sing Up'}
-          backgroundColor='#FFF'
+          backgroundColor="#FFF"
           textSize={20}
           textColor={'#00D25D'}
           height={59}

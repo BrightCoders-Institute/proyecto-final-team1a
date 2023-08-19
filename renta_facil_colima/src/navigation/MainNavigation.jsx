@@ -11,12 +11,12 @@ const Stack = createStackNavigator();
 const MainNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="LogIn"
+      initialRouteName="Start"
       screenOptions={{headerShown: false}}>
-      <Stack.Screen name='Splash' component={SplashScreen}/>
-      <Stack.Screen name='Start' component={MainScreen}/>
-      <Stack.Screen name='LogIn' component={LoginScreen}/>
-      <Stack.Screen name='SignUp' component={SignUpScreen}/> 
+      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Start" component={MainScreen} />
+      <Stack.Screen name="LogIn" component={LoginScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="HomeTabs" component={BottomTabsNavigation} />
       {/* <Stack.Screen name='HouseDetail' component={HouseDetailScreen} /> Descomentar cuando se tenga la screen*/}
       {/* <Stack.Screen name='HouseDetail' component={HouseDetailScreen} /> Descomentar cuando se tenga la screen*/}

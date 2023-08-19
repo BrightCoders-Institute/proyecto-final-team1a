@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 
 const Loginstyles = StyleSheet.create({
-  buttonsContainer:{
+  buttonsContainer: {
     marginVertical: 35,
   },
   inputs: {
@@ -12,9 +12,9 @@ const Loginstyles = StyleSheet.create({
     fontFamily: 'ConcertOne-Regular',
     fontSize: 24,
   },
-  shadow: {    
+  shadow: {
     alignItems: 'center',
-    marginTop:25, 
+    marginTop: 25,
     borderWidth: 1,
     borderColor: 'green',
     backgroundColor: Colors.White,
@@ -32,6 +32,16 @@ const Loginstyles = StyleSheet.create({
   },
   logoContainer: {
     marginBottom: 20,
+  },
+  text: {
+    fontFamily: 'ConcertOne-Regular',
+    fontSize: 16,
+    alignSelf: 'center',
+    color: Colors.Black,
+  },
+  hiperLinkText: {
+    color: Colors.Jade,
+    textDecorationLine: 'underline',
   },
 });
 export default Loginstyles;
