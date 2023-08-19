@@ -4,7 +4,7 @@ import Textinput from '../components/Textinput';
 import BasicButton from '../buttons/BasicButton';
 import SignUpScreenState from '../../hooks/SignUpScreenState';
 import SignUpScreenStyle from '../../styles/SignUpScreenStyle';
-const SignUpScreen = () => {
+const SignUpScreen = ({navigation}) => {
   const {
     firstName,
     lastName,
@@ -19,6 +19,13 @@ const SignUpScreen = () => {
     validateForm,
   } = SignUpScreenState();
 
+  const register = async () => {
+    const  condicion = await validateForm()
+    console.log(condicion);
+    if (condicion){
+      navigation.navigate("HomeTabs")
+    }
+  }
   return (
     <View style={SignUpScreenStyle.container}>
       <Text style={SignUpScreenStyle.titleText}>SIGN UP</Text>
@@ -83,7 +90,7 @@ const SignUpScreen = () => {
           width={150}
           borderColor={'#058C42'}
           shadow={true}
-          onPress={() => validateForm()}
+          onPress={() =>register()}
         />
       </View>
     </View>

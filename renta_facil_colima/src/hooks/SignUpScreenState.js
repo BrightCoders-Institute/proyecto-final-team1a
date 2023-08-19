@@ -8,7 +8,7 @@ const SignUpScreenState = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const validateForm = () => {
+  const validateForm = async () => {
     if (
       firstName.length === 0 ||
       lastName.length === 0 ||
@@ -20,7 +20,10 @@ const SignUpScreenState = () => {
     } else if (password.length < 8) {
      Alert.alert('Error','Contraseña muy corta');
     }
-    CreateUser(email,password);
+    console.log('Si entre perros');
+    const create = await CreateUser(email,password);
+    console.log(create);
+    return create 
   };
 
   const Cancel = () => {
