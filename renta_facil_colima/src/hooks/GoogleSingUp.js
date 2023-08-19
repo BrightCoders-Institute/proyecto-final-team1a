@@ -17,7 +17,7 @@ GoogleSignin.configure({
       const auth = getAuth();
       const userCredential = await signInWithCredential(auth, googleCredential);
       const user = userCredential.user;
-      console.log('User:', user);
+      return true;
     } catch (error) {
       console.error('Google Sign-In error:', error);
     }
