@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Alert} from 'react-native';
+import CreateUser from './CreateUser';
 const SignUpScreenState = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -7,7 +8,7 @@ const SignUpScreenState = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const validateForm = () => {
+  const validateForm = async () => {
     if (
       firstName.length === 0 ||
       lastName.length === 0 ||
@@ -19,7 +20,10 @@ const SignUpScreenState = () => {
     } else if (password.length < 8) {
      Alert.alert('Error','Contraseña muy corta');
     }
-    //Future logic to send data to backend
+    console.log('Si entre perros');
+    const create = await CreateUser(email,password);
+    console.log(create);
+    return create 
   };
 
   const Cancel = () => {
