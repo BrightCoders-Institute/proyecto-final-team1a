@@ -1,44 +1,35 @@
-import React, {useState} from 'react';
-import {TextInput, View, Alert} from 'react-native';
+import React from 'react';
+import {Text, TextInput, View} from 'react-native';
 import BasicButton from '../buttons/BasicButton';
 import GoogleButton from '../buttons/GoogleButton';
 import Loginstyles from '../../styles/LoginScreen';
 import LogoRFC from '../components/LogoRFC';
 import GoogleSignUp from '../../hooks/GoogleSingUp';
-const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [empityEmail, setValueEmail] = useState(false);
-  const [empityPassword, setValuePassword] = useState(false);
+import UseLoginScreenState from '../../hooks/UseLoginScreenState';
+const LoginScreen = ({navigation}) => {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    emptyEmail,
+    emptyPassword,
+    isEmpty,
+  } = UseLoginScreenState();
 
-  const isEmpity = () => {
-    setValueEmail(email.trim() === '');
-    setValuePassword(password.trim() === '');
-
-    if (email.trim() === '' || password.trim() === '') {
-      Alert.alert('Algun campo esta vacio');
-    } else {
-      validateEmail();
+  const googleSign = async () => {
+    const response = await GoogleSignUp();
+    if (response) {
+      navigation.navigate('HomeTabs');
     }
   };
-
-  const validateEmail = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (emailRegex.test(email)) {
-      Alert.alert('Email válido', 'El email es válido.');
-    } else {
-      Alert.alert('Email inválido', 'Por favor, ingresa un email válido.');
-    }
-  };
-
   return (
     <View style={Loginstyles.container}>
       <View style={Loginstyles.logoContainer}>
         <LogoRFC showAppName={false} />
       </View>
       <View
-        style={[Loginstyles.shadow, empityEmail ? {borderColor: 'red'} : null]}>
+        style={[Loginstyles.shadow, emptyEmail ? {borderColor: 'red'} : null]}>
         <TextInput
           style={Loginstyles.inputs}
           onChangeText={text => setEmail(text)}
@@ -52,7 +43,7 @@ const LoginScreen = () => {
       <View
         style={[
           Loginstyles.shadow,
-          empityPassword ? {borderColor: 'red'} : null,
+          emptyPassword ? {borderColor: 'red'} : null,
         ]}>
         <TextInput
           style={Loginstyles.inputs}
@@ -62,11 +53,10 @@ const LoginScreen = () => {
           placeholderTextColor="#8C8C8C"
         />
       </View>
-
       <View style={Loginstyles.buttonsContainer}>
         <BasicButton
           text="Login"
-          onPress={isEmpity}
+          onPress={isEmpty}
           textSize={32}
           borderColor="#058C42"
           backgroundColor="#FFF"
@@ -76,8 +66,16 @@ const LoginScreen = () => {
           width={308}
           shadow={true}
         />
-
-        <GoogleButton onPress={GoogleSignUp}/>
+        <GoogleButton onPress={googleSign} />
+        <Text style={Loginstyles.text}>
+          Do not have an account?
+          <Text
+            style={Loginstyles.hiperLinkText}
+            onPress={() => navigation.goBack()}>
+            {' '}
+            go back to start
+          </Text>
+        </Text>
       </View>
     </View>
   );
