@@ -7,21 +7,22 @@ const Loginstyles = StyleSheet.create({
   },
   inputs: {
     color: Colors.Black,
-    overflow: 'hidden',
     textAlign: 'center',
     fontFamily: 'ConcertOne-Regular',
     fontSize: 24,
-  },
-  shadow: {
-    alignItems: 'center',
     marginTop: 25,
     borderWidth: 1,
     borderColor: 'green',
     backgroundColor: Colors.White,
-    borderRadius: 8,
-    width: '80%',
+    borderRadius: 10,
     height: 49,
     elevation: 10,
+  },
+  errorText: {
+    color: Colors.Red,
+    textAlign: 'center',
+    fontFamily: 'ConcertOne-Regular',
+    fontSize: 16,
   },
   container: {
     alignItems: 'center',

@@ -1,41 +1,30 @@
 import { useState } from 'react';
+import * as Yup from 'yup';
+import SignUser from './SignUser';
 
 
 const UseLoginScreenState = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emptyEmail, setValueEmail] = useState(false);
-  const [emptyPassword, setValuePassword] = useState(false);
 
-  const isEmpty = () => {
-    setValueEmail(email.trim() === '');
-    setValuePassword(password.trim() === '');
+  const formInitialValues = {
+    email: '',
+    password: '',
+  }
 
-    if (email.trim() === '' || password.trim() === '') {
-      Alert.alert('You cant left any field empty', 'Please fill all the fields.');
-    } else {
-      validateEmail();
-    }
-  };
+  const loginSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email field can not be empty'),
+    password: Yup.string().required('Password field can not be empty'),
+  });
 
-  const validateEmail = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const handleLogin = async (email, password) => {
+    const loginResponse = await SignUser(email, password);
+    return loginResponse;
+  }
 
-    if (emailRegex.test(email)) {
-      Alert.alert('Email válido', 'El email es válido.');
-    } else {
-      Alert.alert('Email inválido', 'Por favor, ingresa un email válido.');
-    }
-  };
 
   return {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    emptyEmail,
-    emptyPassword,
-    isEmpty,
+    handleLogin,
+    formInitialValues,
+    loginSchema,
   };
 };
 
