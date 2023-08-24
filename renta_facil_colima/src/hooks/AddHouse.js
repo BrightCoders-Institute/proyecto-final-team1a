@@ -1,14 +1,11 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { firebaseConfig } from "../Firebase/FirebaseConfig";
+import GetCurrentUser from "./GetCurrentUser";
 
 
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
-// Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
 const AddHouse = async (title, address, rooms,bathrooms, surface, rent ) => {
@@ -21,6 +18,8 @@ try {
     bathrooms: bathrooms, 
     surface: surface,
     rent: rent,
+    //img: img, para el futuro//
+    userId: GetCurrentUser()
   });
 
   console.log("Document written with ID: ", docRef.id);

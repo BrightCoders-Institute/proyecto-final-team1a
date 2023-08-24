@@ -4,11 +4,11 @@ const GetCurrentUser = () => {
   const user = auth.currentUser;
 
   if (user) {
-    console.log(user.email);
-    return user.email;
+    console.log(user.uid);
+    return user.uid;
   } else {
     console.log("No user is signed in.");
   }
 };
 
-export default GetCurrentUser
+export default GetCurrentUser;
