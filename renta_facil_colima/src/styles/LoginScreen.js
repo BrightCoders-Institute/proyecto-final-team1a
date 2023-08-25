@@ -18,6 +18,13 @@ const Loginstyles = StyleSheet.create({
     height: 49,
     elevation: 10,
   },
+  inputsPassword: {
+    backgroundColor: 'transparent',
+    width: '75%',
+    marginTop: 0,
+    borderWidth: 0,
+    elevation: 0
+  },
   errorText: {
     color: Colors.Red,
     textAlign: 'center',
@@ -43,6 +50,18 @@ const Loginstyles = StyleSheet.create({
   hiperLinkText: {
     color: Colors.Jade,
     textDecorationLine: 'underline',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginTop: 20,
+    height: 49,
+    elevation: 10,
+    backgroundColor: Colors.White,
+    borderWidth: 1,
+    borderColor: 'green',
   },
 });
 export default Loginstyles;

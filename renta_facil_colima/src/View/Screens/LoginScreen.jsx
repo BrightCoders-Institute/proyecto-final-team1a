@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {Pressable, Text, TextInput, View} from 'react-native';
 import BasicButton from '../buttons/BasicButton';
 import GoogleButton from '../buttons/GoogleButton';
 import Loginstyles from '../../styles/LoginScreen';
@@ -7,11 +7,15 @@ import LogoRFC from '../components/LogoRFC';
 import GoogleSignUp from '../../hooks/GoogleSingUp';
 import {Formik} from 'formik';
 import UseLoginScreenState from '../../hooks/UseLoginScreenState';
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 const LoginScreen = ({navigation}) => {
   const {
     handleLogin,
     formInitialValues,
-    loginSchema
+    loginSchema,
+    handleHidePassword,
+    iconPassword,
+    hidePassword
   } = UseLoginScreenState();
 
   const googleSign = async () => {
@@ -50,15 +54,20 @@ const LoginScreen = ({navigation}) => {
               placeholder="Email"
             />
             {errors.email && <Text style={Loginstyles.errorText}>{errors.email}</Text>}
-            <TextInput
-              style={Loginstyles.inputs}
-              secureTextEntry={true}
-              onBlur={handleBlur('password')}
-              onChangeText={handleChange('password')}
-              value={values.password}
-              placeholder="Password"
-              placeholderTextColor="#8C8C8C"
-            />
+            <View style={Loginstyles.row}>
+              <TextInput
+                style={[Loginstyles.inputs, Loginstyles.inputsPassword]}
+                secureTextEntry={hidePassword}
+                onBlur={handleBlur('password')}
+                onChangeText={handleChange('password')}
+                value={values.password}
+                placeholder="Password"
+                placeholderTextColor="#8C8C8C"
+              />
+              <Pressable onPress={handleHidePassword}>
+                <FontAwesome name={iconPassword()} size={20} color="black"/>
+              </Pressable>
+            </View>
             {errors.password && <Text style={Loginstyles.errorText}>{errors.password}</Text>}
             <View style={Loginstyles.buttonsContainer}>
               <BasicButton
