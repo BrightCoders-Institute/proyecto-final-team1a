@@ -1,13 +1,8 @@
-import {getAuth, signOut} from 'firebase/auth';
-const handleLogOut = () => {
-  const auth = getAuth();
-  signOut(auth)
-    .then(() => {
-      return true;
-    })
-    .catch(error => {
-      // An error happened.
-    });
+import auth from '@react-native-firebase/auth';
+
+const handleLogOut = async () => {
+  auth()
+    .signOut();
 };
 
 export default handleLogOut;

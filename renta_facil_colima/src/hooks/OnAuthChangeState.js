@@ -1,20 +1,28 @@
 import {useEffect, useState} from 'react';
-import { getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
+import auth from '@react-native-firebase/auth';
+
 function OnAuthStateChanged() {
-    const auth = getAuth();
-    setPersistence(auth, browserSessionPersistence)
-      .then(() => {
-        // Existing and future Auth states are now persisted in the current
-        // session only. Closing the window would clear any existing state even
-        // if a user forgets to sign out.
-        // ...
-        // New sign-in will be persisted with session persistence.
-        return signInWithEmailAndPassword(auth, email, password);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  }, []);
+
+  const onAuthStateChanged = user => {
+    setUser(user);
+    if (initializing) {
+      setInitializing(false);
+    }
+  };
+
+  if (initializing) {
+    return null;
+  }
+  if (!user) {
+    return 'No hay usuario';
+  }
+  return user;
 }
 export default OnAuthStateChanged;
