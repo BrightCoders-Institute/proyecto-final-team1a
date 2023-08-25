@@ -6,4 +6,4 @@ const GetCurrentUser = () => {
   }
 };
 
-export default GetCurrentUser
+export default GetCurrentUser;

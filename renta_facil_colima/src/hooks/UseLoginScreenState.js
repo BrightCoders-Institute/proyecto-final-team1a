@@ -36,7 +36,7 @@ const UseLoginScreenState = () => {
     loginSchema,
     handleHidePassword,
     iconPassword,
-    hidePassword
+    hidePassword,
   };
 };
 
