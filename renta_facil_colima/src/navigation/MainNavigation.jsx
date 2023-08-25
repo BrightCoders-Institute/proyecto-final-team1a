@@ -5,13 +5,23 @@ import LoginScreen from '../View/Screens/LoginScreen';
 import SignUpScreen from '../View/Screens/SignUpScreen';
 import SplashScreen from '../View/Screens/SplashScreen';
 import MainScreen from '../View/Screens/MainScreen';
+import GetCurrentUser from '../hooks/GetCurrentUser';
 
 const Stack = createStackNavigator();
 
 const MainNavigation = () => {
+
+  const getInitialRoute = () => {
+    const user = GetCurrentUser();
+    if (user){
+      return 'HomeTabs'
+    }
+    return 'Start'
+  }
+
   return (
     <Stack.Navigator
-      initialRouteName="Start"
+      initialRouteName={getInitialRoute()}
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Start" component={MainScreen} />
