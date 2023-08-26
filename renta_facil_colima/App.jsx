@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigation from './src/navigation/MainNavigation';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {
   configureFonts,
   Provider as PaperProvider,
@@ -23,12 +24,13 @@ const theme = {
 };
 
 function App() {
-
   return (
     <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <MainNavigation />
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <MainNavigation />
+        </NavigationContainer>
+      </SafeAreaProvider>
     </PaperProvider>
   );
 }

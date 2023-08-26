@@ -1,120 +1,168 @@
 import React from 'react';
-import {View, TextInput, Text, TouchableOpacity} from 'react-native';
+import {Modal, View, ScrollView} from 'react-native';
+import {Card, Headline, Text, HelperText} from 'react-native-paper';
+import Textinput from './Textinput';
 import styleForm from '../../styles/formAddStyle';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import DropDow from './dropDown';
 import FormSendHouse from '../../hooks/formSendHouse';
-const FormAdd = () => {
-  const {
-    toggleVisibility,
-    setTitle,
-    setLocation,
-    setRooms,
-    setDescription,
-    setPrice,
-    isVisible,
-    titlle,
-    lcoation,
-    rooms,
-    Description,
-    price,
-  } = FormSendHouse();
+import UtilsStyle from '../../styles/UtilsStyle';
+import BasicButton from '../buttons/BasicButton';
+import Colors from '../../styles/Colors';
+import {Formik} from 'formik';
+const FormAdd = ({visibility, sendHouse, cancel}) => {
+  const {formSchema, formInitialValues} = FormSendHouse();
   return (
-    <View style={styleForm.mainContainer}>
-      {isVisible && (
-        <View>
-          <Text style={styleForm.title}>Agregar una renta</Text>
-          <View style={styleForm.formContainer}>
-            <View style={styleForm.iconClose}>
-              <TouchableOpacity onPress={toggleVisibility}>
-                <Icon size={50} name={'close-circle-outline'} color="#900" />
-              </TouchableOpacity>
-            </View>
-            <View>
-              <Text style={styleForm.text}>Titulo</Text>
-              <TextInput
-                style={styleForm.inputs}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                placeholderTextColor={'black'}
-                onChangeText={setTitle}
-              />
-            </View>
-            <View>
-              <Text style={styleForm.text}>Ubicacion</Text>
-              <TextInput
-                onChange={setLocation}
-                style={styleForm.inputs}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                placeholderTextColor={'black'}
-              />
-            </View>
-            <View style={styleForm.doubleInputs}>
-              <View style={styleForm.tipo}>
-                <Text style={styleForm.text}>Tipo</Text>
-                <DropDow />
-              </View>
-              <View style={styleForm.cuartos}>
-                <Text style={styleForm.text}>Cuartos</Text>
-                <TextInput
-                  onChangeText={setRooms}
-                  style={styleForm.inputs}
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholderTextColor={'black'}
-                />
-              </View>
-            </View>
-            <View>
-              <Text style={styleForm.text}> Descripción</Text>
-              <TextInput
-                onChangeText={setDescription}
-                style={styleForm.inputs}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                placeholderTextColor={'black'}
-              />
-            </View>
-            <View style={styleForm.doubleInputs}>
-              <View style={styleForm.precioContainer}>
-                <Text style={styleForm.text}>Precio</Text>
-                <TextInput
-                  onChangeText={setPrice}
-                  style={styleForm.inputs}
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholderTextColor={'black'}
-                />
-              </View>
-              <View style={styleForm.iconContainer}>
-                <Text style={styleForm.text}>Etiqueta</Text>
-                <TouchableOpacity>
-                  <Icon
-                    size={50}
-                    name={'plus-box'}
-                    style={styleForm.iconPlus}
+    <Modal animationType="slide" transparent={false} visible={visibility}>
+      <View style={styleForm.mainContainer}>
+        <Headline style={styleForm.title}>Add a new house</Headline>
+        <Formik
+          initialValues={formInitialValues}
+          onSubmit={sendHouse}
+          validationSchema={formSchema}>
+          {({handleChange, handleSubmit, values, errors}) => (
+            <ScrollView>
+              <Card style={styleForm.cardStyle}>
+                <Card.Content>
+                  <Text style={styleForm.inputText}>Title</Text>
+                  <Textinput
+                    altura={53}
+                    padding={10}
+                    margen={20}
+                    value={values.title}
+                    onChangeText={handleChange('title')}
                   />
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View>
-              <TouchableOpacity style={styleForm.btnImage}>
-                <Text style={styleForm.btn}>Agregar una imagen</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styleForm.containerBtnSend}>
-              <TouchableOpacity style={styleForm.btnSend}>
-                <Text style={styleForm.btn}>Guardar Casa</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      )}
-      <TouchableOpacity onPress={toggleVisibility}>
-        <Icon size={50} name={'close-circle-outline'} color="#900" />
-      </TouchableOpacity>
-    </View>
+                  <HelperText
+                    type="error"
+                    visible={errors.title}
+                    style={[UtilsStyle.errorText, styleForm.localError]}>
+                    {errors.title}
+                  </HelperText>
+                  <Text style={styleForm.inputText}>Description</Text>
+                  <Textinput
+                    altura={53}
+                    padding={10}
+                    margen={20}
+                    value={values.description}
+                    onChangeText={handleChange('description')}
+                  />
+                  <HelperText
+                    type="error"
+                    visible={errors.description}
+                    style={[UtilsStyle.errorText, styleForm.localError]}>
+                    {errors.description}
+                  </HelperText>
+                  <View style={UtilsStyle.row}>
+                    <View style={styleForm.col50}>
+                      <Text style={styleForm.inputTextRow}>Rooms</Text>
+                      <Textinput
+                        altura={53}
+                        padding={10}
+                        margen={10}
+                        value={values.rooms}
+                        onChangeText={handleChange('rooms')}
+                      />
+                      <HelperText
+                        type="error"
+                        visible={errors.rooms}
+                        style={[UtilsStyle.errorText, styleForm.localError]}>
+                        {errors.rooms}
+                      </HelperText>
+                    </View>
+                    <View style={styleForm.col50}>
+                      <Text style={styleForm.inputTextRow}>Bathrooms</Text>
+                      <Textinput
+                        altura={53}
+                        padding={10}
+                        margen={10}
+                        value={values.bathrooms}
+                        onChangeText={handleChange('bathrooms')}
+                      />
+                      <HelperText
+                        type="error"
+                        visible={errors.bathrooms}
+                        style={[UtilsStyle.errorText, styleForm.localError]}>
+                        {errors.bathrooms}
+                      </HelperText>
+                    </View>
+                  </View>
+                  <Text style={styleForm.inputText}>Address</Text>
+                  <Textinput
+                    altura={53}
+                    padding={10}
+                    margen={20}
+                    value={values.address}
+                    onChangeText={handleChange('address')}
+                  />
+                  <HelperText
+                    type="error"
+                    visible={errors.address}
+                    style={[UtilsStyle.errorText, styleForm.localError]}>
+                    {errors.address}
+                  </HelperText>
+                  <View style={UtilsStyle.row}>
+                    <View style={styleForm.col50}>
+                      <Text style={styleForm.inputTextRow}>Surface</Text>
+                      <Textinput
+                        altura={53}
+                        padding={10}
+                        margen={10}
+                        value={values.surface}
+                        onChangeText={handleChange('surface')}
+                      />
+                      <HelperText
+                        type="error"
+                        visible={errors.surface}
+                        style={[UtilsStyle.errorText, styleForm.localError]}>
+                        {errors.surface}
+                      </HelperText>
+                    </View>
+                    <View style={styleForm.col50}>
+                      <Text style={styleForm.inputTextRow}>
+                        Price per month
+                      </Text>
+                      <Textinput
+                        altura={53}
+                        padding={10}
+                        margen={10}
+                        value={values.rent}
+                        onChangeText={handleChange('rent')}
+                      />
+                      <HelperText
+                        type="error"
+                        visible={errors.rent}
+                        style={[UtilsStyle.errorText, styleForm.localError]}>
+                        {errors.rent}
+                      </HelperText>
+                    </View>
+                  </View>
+                  <View style={UtilsStyle.rowSpaceAround}>
+                    <BasicButton
+                      onPress={cancel}
+                      text="Cancel"
+                      textSize={18}
+                      backgroundColor={Colors.White}
+                      borderColor={Colors.Red}
+                      textColor={Colors.Red}
+                      height={59}
+                      width={140}
+                    />
+                    <BasicButton
+                      text="Add"
+                      textSize={18}
+                      backgroundColor={Colors.White}
+                      borderColor={Colors.Malachite}
+                      textColor={Colors.Malachite}
+                      height={59}
+                      width={140}
+                      onPress={handleSubmit}
+                    />
+                  </View>
+                </Card.Content>
+              </Card>
+            </ScrollView>
+          )}
+        </Formik>
+      </View>
+    </Modal>
   );
 };
 

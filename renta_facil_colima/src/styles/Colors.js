@@ -11,6 +11,7 @@ const Colors = {
   SeaGreen: '#058C42',
   White: '#FFFFFF',
   Red: '#FF0000',
+  PakistanGreen: '#04471C',
 };
 
 export default Colors;
