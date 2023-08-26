@@ -10,7 +10,7 @@ const UseReusableMainScreenState = screenType => {
   const [loading, setLoading] = useState(true);
 
   const functionsGetData = {
-    HOME: GetDataFromCollection('Houses'),
+    HOME: GetDataFromCollection('Houses', 'created', 6),
     MYHOUSES: GetDataFromCollection('Houses'), //Replace for my houses when function is ready
     LIKES: GetDataFromCollection('Houses'), // Replace for my likes when function is ready
   };
