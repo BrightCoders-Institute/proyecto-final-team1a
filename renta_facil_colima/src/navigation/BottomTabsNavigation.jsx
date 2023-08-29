@@ -4,6 +4,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import ReusableMainScreen from '../View/Screens/ReusableMainScreen';
+import ProfileScreen from '../View/Screens/ProfileScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -50,7 +51,7 @@ const BottomTabsNavigation = () => {
         }}
         initialParams={{screenType: 'LIKES'}}
       /> 
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
@@ -59,7 +60,7 @@ const BottomTabsNavigation = () => {
             <Entypo name="user" color={color} size={20} />
           ),
         }}
-      /> Descomentar cuando este la ProfileScreen*/}
+      />
     </Tab.Navigator>
   );
 };

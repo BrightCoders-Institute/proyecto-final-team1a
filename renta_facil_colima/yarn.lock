@@ -2174,18 +2174,22 @@
     prompts "^2.4.0"
     semver "^6.3.0"
 
+
 "@react-native-firebase/app@^18.3.0", "@react-native-firebase/app@18.3.1":
   version "18.3.1"
   resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-18.3.1.tgz"
   integrity sha512-6IbAwVfIrRoKMP+lRVGwDByOz0uSPPMlHTbRp9xglm0OOPrbDWH0hjDhHoHQ8KFrMQvUIaV3bMSg5iBRFHrdnA==
+
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
 "@react-native-firebase/auth@^18.3.0":
+
   version "18.3.1"
   resolved "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-18.3.1.tgz"
   integrity sha512-8LOVUO9BMGDGvX4uz4pJBQxGsOaLO3MFwgjuN+y9inpQRgqVm1kHQ1lsKWaS7zZLqVyYUxpY+wYx6jWL/xGwiA==
+
   dependencies:
     plist "^3.0.5"
 
@@ -3717,14 +3721,17 @@ eslint-visitor-keys@^2.1.0:
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
 eslint-visitor-keys@^3.3.0:
+
   version "3.4.2"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.2.tgz"
   integrity sha512-8drBzUEyZ2llkpCA67iYrgEssKDUu68V8ChqqOfFupIaG/LCVPUT+CoGJpT77zJprs4T/W7p07LP7zAIMuweVw==
 
 eslint-visitor-keys@^3.4.1:
+
   version "3.4.2"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.2.tgz"
   integrity sha512-8drBzUEyZ2llkpCA67iYrgEssKDUu68V8ChqqOfFupIaG/LCVPUT+CoGJpT77zJprs4T/W7p07LP7zAIMuweVw==
+
 
 eslint-visitor-keys@^3.4.2:
   version "3.4.2"
