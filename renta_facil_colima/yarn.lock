@@ -1600,13 +1600,12 @@
     yargs "^16.2.0"
 
 "@grpc/proto-loader@^0.7.0":
-  version "0.7.8"
-  resolved "https://registry.npmjs.org/@grpc/proto-loader/-/proto-loader-0.7.8.tgz"
-  integrity sha512-GU12e2c8dmdXb7XUlOgYWZ2o2i+z9/VeACkxTA/zzAe2IjclC5PnVL0lpgjhrqfpDYHzM8B1TF6pqWegMYAzlA==
+  version "0.7.9"
+  resolved "https://registry.npmjs.org/@grpc/proto-loader/-/proto-loader-0.7.9.tgz"
+  integrity sha512-YJsOehVXzgurc+lLAxYnlSMc1p/Gu6VAvnfx0ATi2nzvr0YZcjhmZDeY8SeAKv1M7zE3aEJH0Xo9mK1iZ8GYoQ==
   dependencies:
-    "@types/long" "^4.0.1"
     lodash.camelcase "^4.3.0"
-    long "^4.0.0"
+    long "^5.0.0"
     protobufjs "^7.2.4"
     yargs "^17.7.2"
 
@@ -2175,20 +2174,29 @@
     prompts "^2.4.0"
     semver "^6.3.0"
 
-"@react-native-firebase/app@^18.3.0", "@react-native-firebase/app@18.3.0":
-  version "18.3.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-18.3.0.tgz"
-  integrity sha512-4sJf5mM551Y6E8D1hQufAU/PNEecJEaJbF4Me0JyclI2RXUHlTxJUpAsB/gxPY74LY99FaogFsDEB+3BuZ2B9w==
+
+"@react-native-firebase/app@^18.3.0", "@react-native-firebase/app@18.3.1":
+  version "18.3.1"
+  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-18.3.1.tgz"
+  integrity sha512-6IbAwVfIrRoKMP+lRVGwDByOz0uSPPMlHTbRp9xglm0OOPrbDWH0hjDhHoHQ8KFrMQvUIaV3bMSg5iBRFHrdnA==
+
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
 "@react-native-firebase/auth@^18.3.0":
-  version "18.3.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-18.3.0.tgz"
-  integrity sha512-2Z33pG+41RvYX6NxQfRhle+wAfhDKYStSANMVT4NMQKKhgmxryH0CXcfHA0RvfQysdrmBVX2td7l6hXriYL70A==
+
+  version "18.3.1"
+  resolved "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-18.3.1.tgz"
+  integrity sha512-8LOVUO9BMGDGvX4uz4pJBQxGsOaLO3MFwgjuN+y9inpQRgqVm1kHQ1lsKWaS7zZLqVyYUxpY+wYx6jWL/xGwiA==
+
   dependencies:
     plist "^3.0.5"
+
+"@react-native-firebase/firestore@^18.3.1":
+  version "18.3.1"
+  resolved "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-18.3.1.tgz"
+  integrity sha512-+ot8gdZufsfXGbqW6F4sORxEPXhW2l/LnbJBKxhCVM+w0FikYJJu3VtEneumvojNP4KC0Ci+xn6aCvI5qkqZ6Q==
 
 "@react-native-google-signin/google-signin@^10.0.1":
   version "10.0.1"
@@ -3708,14 +3716,17 @@ eslint-visitor-keys@^2.1.0:
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
 eslint-visitor-keys@^3.3.0:
+
   version "3.4.2"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.2.tgz"
   integrity sha512-8drBzUEyZ2llkpCA67iYrgEssKDUu68V8ChqqOfFupIaG/LCVPUT+CoGJpT77zJprs4T/W7p07LP7zAIMuweVw==
 
 eslint-visitor-keys@^3.4.1:
+
   version "3.4.2"
   resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.2.tgz"
   integrity sha512-8drBzUEyZ2llkpCA67iYrgEssKDUu68V8ChqqOfFupIaG/LCVPUT+CoGJpT77zJprs4T/W7p07LP7zAIMuweVw==
+
 
 eslint-visitor-keys@^3.4.2:
   version "3.4.2"
@@ -6116,9 +6127,9 @@ prop-types@*, prop-types@^15.7.2, prop-types@^15.8.1:
     react-is "^16.13.1"
 
 protobufjs@^6.11.3:
-  version "6.11.3"
-  resolved "https://registry.npmjs.org/protobufjs/-/protobufjs-6.11.3.tgz"
-  integrity sha512-xL96WDdCZYdU7Slin569tFX712BxsxslWwAfAhCYjQKGTq7dAU91Lomy6nLLhh/dyGhk/YH4TwTSRxTzhuHyZg==
+  version "6.11.4"
+  resolved "https://registry.npmjs.org/protobufjs/-/protobufjs-6.11.4.tgz"
+  integrity sha512-5kQWPaJHi1WoCpjTGszzQ32PG2F4+wRY6BmAT4Vfw56Q2FZ4YZzK20xUYQH4YkfehY1e6QSICrJquM6xXZNcrw==
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
@@ -6135,9 +6146,9 @@ protobufjs@^6.11.3:
     long "^4.0.0"
 
 protobufjs@^7.2.4:
-  version "7.2.4"
-  resolved "https://registry.npmjs.org/protobufjs/-/protobufjs-7.2.4.tgz"
-  integrity sha512-AT+RJgD2sH8phPmCf7OUZR8xGdcJRga4+1cOaXJ64hvcSkVhNcRHOwIxUatPH15+nj59WAGTDv3LSGZPEQbJaQ==
+  version "7.2.5"
+  resolved "https://registry.npmjs.org/protobufjs/-/protobufjs-7.2.5.tgz"
+  integrity sha512-gGXRSXvxQ7UiPgfw8gevrfRWcTlSbOFg+p/N+JVJEK5VhueL2miT6qTymqAmjr1Q5WbOCyJbyrk6JfWKwlFn6A==
   dependencies:
     "@protobufjs/aspromise" "^1.1.2"
     "@protobufjs/base64" "^1.1.2"
