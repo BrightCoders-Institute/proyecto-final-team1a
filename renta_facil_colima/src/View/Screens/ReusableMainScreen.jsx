@@ -8,6 +8,8 @@ import {ActivityIndicator} from 'react-native-paper';
 
 import UseReusableMainScreenState from '../../hooks/UseReusableMainScreenState';
 
+import AddHouse from '../../hooks/AddHouse';
+
 const ReusableMainScreen = ({route}) => {
   const {screenType} = route.params;
   const {
@@ -23,6 +25,7 @@ const ReusableMainScreen = ({route}) => {
     screenColor,
   } = UseReusableMainScreenState(screenType);
   
+  AddHouse("Colinas", "Armeria 763", "4", "1", "300", "3500")
   return (
     <View style={ReusableMainScreenStyle.mainContainer}>
       <FiltersModal

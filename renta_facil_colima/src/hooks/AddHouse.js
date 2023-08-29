@@ -1,14 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { firebaseConfig } from "../Firebase/FirebaseConfig";
+import { Alert } from "react-native";
 
 
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 
-// Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
 const AddHouse = async (title, address, rooms,bathrooms, surface, rent ) => {
@@ -21,11 +20,13 @@ try {
     bathrooms: bathrooms, 
     surface: surface,
     rent: rent,
+    //img: img, para el futuro//
   });
 
-  console.log("Document written with ID: ", docRef.id);
+  return docRef.id;
+
 } catch (e) {
-  console.error("Error adding document: ", e);
+  Alert.alert("Error adding document: ", error.message);
 }
 };
 
