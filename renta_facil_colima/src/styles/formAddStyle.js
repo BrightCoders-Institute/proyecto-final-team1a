@@ -2,86 +2,34 @@ import {StyleSheet} from 'react-native';
 
 const styleForm = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    backgroundColor: '#fff',
-    whith: '100',
-    justifyContent: 'center', // Centrar contenido verticalmente
-    paddingHorizontal: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
   },
-  text: {
-    color: 'black',
-    fontFamily: 'ConcertOne-Regular',
+  cardStyle: {
+    backgroundColor: '#D9D9D9',
+    width: '95%',
+    marginLeft: 10,
+    borderRadius: 10,
+  },
+  col50: {
+    width: '50%',
   },
   title: {
-    color: 'black',
-    fontSize: 30,
-    fontFamily: 'ConcertOne-Regular',
+    fontSize: 48,
+    marginBottom: 40,
   },
-  formContainer: {
-    marginTop: 50,
-    padding: 15,
-    borderRadius: 10,
-    backgroundColor: 'gray',
+  inputText: {
+    marginLeft: 18,
+    marginBottom: -12,
+    fontSize: 18,
   },
-  inputs: {
-    color: 'black',
-    backgroundColor: '#fff',
-    borderRadius: 10,
+  inputTextRow: {
+    fontSize: 18,
+    marginLeft: 8,
   },
-  doubleInputs: {
-    flexDirection: 'row', // Distribuir elementos en una fila
-    alignItems: 'center',
-  },
-  tipo: {
-    flex: 2,
-    padding: 5,
-  },
-  cuartos: {
-    flex: 1,
-    padding: 5,
-  },
-  iconPlus: {color: 'black'},
-  precioContainer: {
-    flex: 2,
-  },
-  iconContainer: {
-    flex: 1,
-    marginLeft: 12,
-  },
-  btnImage: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    marginTop: 15,
-    width: 180,
-    height: 30,
-    borderRadius: 10,
-    color: '#fff',
-    padding: 5,
-    fontWeight: 'bold',
-  },
-  btn: {
-    fontSize: 12,
-    fontFamily: 'ConcertOne-Regular',
-    color: 'black',
-  },
-  containerBtnSend: {
-    alignItems: 'center',
-  },
-  btnSend: {
-    backgroundColor: '#3B5547',
-    alignItems: 'center',
-    marginTop: 15,
-    width: 180,
-    height: 30,
-    borderRadius: 10,
-    color: '#fff',
-    padding: 5,
-    fontWeight: 'bold',
-  },
-  iconClose: {
-    position: 'absolute',
-    top: -20,
-    right: -20,
+  localError: {
+    marginTop: -15,
   },
 });
 

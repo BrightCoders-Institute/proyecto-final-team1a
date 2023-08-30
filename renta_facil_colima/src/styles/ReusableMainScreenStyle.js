@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
 import Colors from './Colors';
-
 const ReusableMainScreenStyle = StyleSheet.create({
   mainContainer: {
     backgroundColor: Colors.White,
@@ -20,6 +19,13 @@ const ReusableMainScreenStyle = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 15,
+    borderRadius: 10,
+    backgroundColor: '#84A9C0',
   },
 });
 

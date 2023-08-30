@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const DropDow = () => {
+const DropDown = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -20,4 +20,4 @@ const DropDow = () => {
     />
   );
 };
-export default DropDow;
+export default DropDown;

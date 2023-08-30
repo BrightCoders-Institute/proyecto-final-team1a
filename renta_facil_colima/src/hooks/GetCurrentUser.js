@@ -1,14 +1,8 @@
-import {getAuth} from 'firebase/auth';
-import { Alert } from 'react-native/Libraries/Alert/Alert';
+import auth from '@react-native-firebase/auth';
 const GetCurrentUser = () => {
-  const auth = getAuth();
-  const user = auth.currentUser;
-
+  const user = auth().currentUser;
   if (user) {
-    Alert.alert(user.uid);
-    return user.uid;
-  } else {
-    Alert.alert("No user is signed in.");
+    return user;
   }
 };
 

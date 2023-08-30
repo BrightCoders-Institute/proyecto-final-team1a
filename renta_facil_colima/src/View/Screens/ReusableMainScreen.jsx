@@ -5,11 +5,11 @@ import SearchBar from '../components/SearchBar';
 import ReusableMainScreenStyle from '../../styles/ReusableMainScreenStyle';
 import FiltersModal from '../components/FiltersModal';
 import {ActivityIndicator} from 'react-native-paper';
-
+import FormAdd from '../components/formAdd';
 import UseReusableMainScreenState from '../../hooks/UseReusableMainScreenState';
-
-import AddHouse from '../../hooks/AddHouse';
-
+import FormSendHouse from '../../hooks/formSendHouse';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {FAB} from 'react-native-paper';
 const ReusableMainScreen = ({route}) => {
   const {screenType} = route.params;
   const {
@@ -24,15 +24,32 @@ const ReusableMainScreen = ({route}) => {
     handleSearch,
     screenColor,
   } = UseReusableMainScreenState(screenType);
-  
-  AddHouse("Colinas", "Armeria 763", "4", "1", "300", "3500")
+
+  const {openHouseForm, isVisible, closeHouseForm, handleAddHouse} =
+    FormSendHouse();
+
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={ReusableMainScreenStyle.mainContainer}>
-      <FiltersModal
-        modalVisible={modalVisible}
-        cancelFunction={cancelModalFunction}
-        onSearchFilter={handleSearchFilter}
-      />
+    <View
+      style={[
+        ReusableMainScreenStyle.mainContainer,
+        {paddingBottom: insets.bottom},
+      ]}>
+      {screenType === 'HOME' && (
+        <FiltersModal
+          modalVisible={modalVisible}
+          cancelFunction={cancelModalFunction}
+          onSearchFilter={handleSearchFilter}
+        />
+      )}
+      {screenType === 'MYHOUSES' && (
+        <FormAdd
+          visibility={isVisible}
+          cancel={closeHouseForm}
+          sendHouse={handleAddHouse}
+        />
+      )}
       <View style={ReusableMainScreenStyle.headerContainer}>
         {screenType === 'HOME' && (
           <SearchBar
@@ -61,7 +78,15 @@ const ReusableMainScreen = ({route}) => {
           />
         </View>
       )}
-      {!loading && <Lista data={houses}/>}
+      {!loading && <Lista data={houses} />}
+      {screenType === 'MYHOUSES' && (
+        <FAB
+          style={ReusableMainScreenStyle.fab}
+          color="#FFFF"
+          icon="plus"
+          onPress={openHouseForm}
+        />
+      )}
     </View>
   );
 };

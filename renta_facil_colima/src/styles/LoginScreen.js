@@ -7,21 +7,29 @@ const Loginstyles = StyleSheet.create({
   },
   inputs: {
     color: Colors.Black,
-    overflow: 'hidden',
     textAlign: 'center',
     fontFamily: 'ConcertOne-Regular',
     fontSize: 24,
-  },
-  shadow: {
-    alignItems: 'center',
     marginTop: 25,
     borderWidth: 1,
     borderColor: 'green',
     backgroundColor: Colors.White,
-    borderRadius: 8,
-    width: '80%',
+    borderRadius: 10,
     height: 49,
     elevation: 10,
+  },
+  inputsPassword: {
+    backgroundColor: 'transparent',
+    width: '75%',
+    marginTop: 0,
+    borderWidth: 0,
+    elevation: 0
+  },
+  errorText: {
+    color: Colors.Red,
+    textAlign: 'center',
+    fontFamily: 'ConcertOne-Regular',
+    fontSize: 16,
   },
   container: {
     alignItems: 'center',
@@ -42,6 +50,18 @@ const Loginstyles = StyleSheet.create({
   hiperLinkText: {
     color: Colors.Jade,
     textDecorationLine: 'underline',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginTop: 20,
+    height: 49,
+    elevation: 10,
+    backgroundColor: Colors.White,
+    borderWidth: 1,
+    borderColor: 'green',
   },
 });
 export default Loginstyles;
