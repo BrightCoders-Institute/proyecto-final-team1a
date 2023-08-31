@@ -5,15 +5,21 @@ const AvatarImageEditStyle = StyleSheet.create({
   container: {
     width: 125,
   },
-  icon: {
-    backgroundColor: Colors.Malachite,
+  iconContainer: {
+    backgroundColor: Colors.White,
     position: 'absolute',
+    height: 30,
+    width: 30,
     top: 15,
     right: 15,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  icon: {
+    backgroundColor: Colors.Malachite,
+    borderRadius: 10,
+  }
 });
 
 export default AvatarImageEditStyle;

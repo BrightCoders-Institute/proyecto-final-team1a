@@ -11,9 +11,11 @@ const AvatarImageEdit = ({image, onPress}) => {
   return (
     <View style={AvatarImageEditStyle.container}>
       <Avatar.Image size={125} source={localImage} />
-      <Pressable style={AvatarImageEditStyle.icon} onPress={onPress}>
-        <Feather name="edit" size={24} color="black" />
-      </Pressable>
+      <View style={AvatarImageEditStyle.iconContainer}>
+        <Pressable style={AvatarImageEditStyle.icon} onPress={onPress}>
+          <Feather name="edit" size={24} color="black" />
+        </Pressable>
+      </View>
     </View>
   );
 };
