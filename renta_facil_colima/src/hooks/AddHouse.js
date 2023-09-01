@@ -1,17 +1,11 @@
-import {initializeApp} from 'firebase/app';
-import {getFirestore, collection, addDoc} from 'firebase/firestore';
-import {firebaseConfig} from '../Firebase/FirebaseConfig';
+import firestore from '@react-native-firebase/firestore';
 import GetCurrentUser from '../hooks/GetCurrentUser';
 import {Alert} from 'react-native';
-
-const app = initializeApp(firebaseConfig);
-
-const db = getFirestore(app);
 
 const AddHouse = async (title, address, rooms, bathrooms, surface, rent) => {
   try {
     const user = GetCurrentUser();
-    const docRef = await addDoc(collection(db, 'Houses'), {
+    const docRef = await firestore().collection('Houses').add({
       title: title,
       address: address,
       rooms: rooms,
@@ -19,6 +13,7 @@ const AddHouse = async (title, address, rooms, bathrooms, surface, rent) => {
       surface: surface,
       rent: rent,
       userId: user.uid,
+      created: firestore.FieldValue.serverTimestamp(),
     });
 
     return docRef.id;

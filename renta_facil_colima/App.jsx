@@ -1,6 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DefaultTheme as NavigationTheme,
+} from '@react-navigation/native';
 import MainNavigation from './src/navigation/MainNavigation';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {
@@ -23,11 +26,19 @@ const theme = {
   fonts: configureFonts(fontsConfig),
 };
 
+const navTheme = {
+  ...NavigationTheme,
+  colors: {
+    ...NavigationTheme.colors,
+    background: '#fff',
+  },
+};
+
 function App() {
   return (
     <PaperProvider theme={theme}>
       <SafeAreaProvider>
-        <NavigationContainer>
+        <NavigationContainer theme={navTheme}>
           <MainNavigation />
         </NavigationContainer>
       </SafeAreaProvider>
