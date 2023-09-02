@@ -1,17 +1,27 @@
 import {useState, useEffect} from 'react';
 import UseFiltersModalState from './UseFiltersModalState';
 import GetDataFromFirebase from './GetDataFromFirebase';
+import GetCurrentUser from './GetCurrentUser';
 
 const UseReusableMainScreenState = screenType => {
+  const user = GetCurrentUser();
   const {GetDataFromCollection} = GetDataFromFirebase();
   const [houses, setHouses] = useState([]);
   const [search, setSearch] = useState('');
   const {modalVisible, openModal, closeModal} = UseFiltersModalState();
   const [loading, setLoading] = useState(true);
 
+  const myHousesFilter = {
+    field: 'userId',
+    operator: '==',
+    value: user.uid,
+  };
+
   const functionsGetData = {
     HOME: GetDataFromCollection('Houses', 'created', 6),
-    MYHOUSES: GetDataFromCollection('Houses'), //Replace for my houses when function is ready
+    MYHOUSES: GetDataFromCollection('Houses', 'created', 6, null, [
+      myHousesFilter,
+    ]),
     LIKES: GetDataFromCollection('Houses'), // Replace for my likes when function is ready
   };
 
