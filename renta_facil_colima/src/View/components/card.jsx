@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, ImageBackground} from 'react-native';
+import {Text, View, ImageBackground, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -7,11 +7,13 @@ import styles from '../../styles/CardStyle';
 import UtilsStyle from '../../styles/UtilsStyle';
 import GetCurrentUser from '../../hooks/GetCurrentUser';
 import LikeButton from '../buttons/LikeButton';
+import {useNavigation} from '@react-navigation/native';
 
 const Card = ({propiedad}) => {
+  const navigation = useNavigation();
   const user = GetCurrentUser();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('HouseDetail', {house: propiedad})}>
       <View style={styles.rowMargin}>
         <ImageBackground
           source={require('../../assets/img/casa.jpg')}
@@ -67,7 +69,7 @@ const Card = ({propiedad}) => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

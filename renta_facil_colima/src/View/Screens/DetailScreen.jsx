@@ -5,24 +5,23 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CommentComponent from '../components/CommentComponent';
 import DetailScreenStyles from '../../styles/DetailScreenStyles';
-const DetailScreen = () => {
-
+const DetailScreen = ({route}) => {
+  const {house} = route.params;
   return (
     <View style={{ alignItems: 'center' }}>
       <Carrucel />
       <Text style={DetailScreenStyles.propietyName}>
-        Propiety Name
+        {house.title}
       </Text>
 
       <View style={{ alignItems: 'flex-start' }}>
         <Text>
           {' '}
           <EvilIcons name={'location'} size={24} color={'black'} />
-          House Location
+          {house.address}
         </Text>
       </View>
 
-      //En un futuro esta parte se llenara con la informacion en firebase
       <View
         style={DetailScreenStyles.containerInfo}>
         <Text>
@@ -31,7 +30,7 @@ const DetailScreen = () => {
             size={24}
             color={'black'}
           />
-          4
+          {house.rooms}
         </Text>
 
         <Text>
@@ -40,7 +39,7 @@ const DetailScreen = () => {
             size={24}
             color={'black'}
           />
-          3
+          {house.bathrooms}
         </Text>
 
         <Text>
@@ -49,13 +48,13 @@ const DetailScreen = () => {
             size={24}
             color={'black'}
           />
-          24mtr
+          {house.surface}mt²
         </Text>
       </View>
 
       <View style={DetailScreenStyles.descriptionConatiner}>
         <Text style={DetailScreenStyles.houseDescription}>House Description</Text>
-        <Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, expedita amet id accusantium eos nostrum eveniet voluptates, sequi quisquam excepturi repellat molestiae porro incidunt quis illum laborum, laudantium voluptatibus maxime.</Text>
+        <Text>{house.description}</Text>
       </View>
       <View style={DetailScreenStyles.commentsContainer}>
         <Text style={DetailScreenStyles.commentsTitle}>Comments</Text>
