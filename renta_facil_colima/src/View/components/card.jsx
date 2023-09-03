@@ -1,39 +1,70 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import GetCurrentUser from '../../hooks/GetCurrentUser';
+import {Text, View, ImageBackground} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from '../../styles/CardStyle';
+import UtilsStyle from '../../styles/UtilsStyle';
+import GetCurrentUser from '../../hooks/GetCurrentUser';
+import LikeButton from '../buttons/LikeButton';
 
 const Card = ({propiedad}) => {
   const user = GetCurrentUser();
   return (
-    <View style={[styles.item]}>
-      <View style={styles.columna1}>
-        <Image
-          style={styles.foto}
+    <View style={styles.container}>
+      <View style={styles.rowMargin}>
+        <ImageBackground
           source={require('../../assets/img/casa.jpg')}
+          style={styles.img}
         />
-      </View>
-      <View style={styles.columna2}>
-        <Text style={styles.title}>{propiedad.title}</Text>
-        <Text style={styles.addres}>
-          <Icon name="map-marker-outline" size={18} /> {propiedad.address}
-        </Text>
-        <View style={styles.containerIcons}>
-          <Icon name="bed-king-outline" size={18} color="black" />
-          <Text style={styles.textIcons}>{propiedad.rooms}</Text>
-          <Icon name="shower" size={18} color="black" />
-          <Text style={styles.textIcons}>{propiedad.bathrooms}</Text>
-          <Icon name="texture-box" size={18} color="black" />
-          <Text style={styles.textIcons}>{propiedad.surface} Mt2</Text>
-        </View>
-        <View style={styles.heartAndRentContainer}>
-          <Text style={styles.rent}>${propiedad.rent}/Mes</Text>
-          {user.uid !== propiedad.userId && (
-            <TouchableOpacity style={styles.heartContainer}>
-              <Icon style={styles.heart} size={16} name={'heart'} />
-            </TouchableOpacity>
-          )}
+        <View style={styles.col}>
+          <Text style={styles.textTitle}>{propiedad.title}</Text>
+          <View style={UtilsStyle.row}>
+            <Octicons
+              style={styles.icon}
+              name="location"
+              size={20}
+              color="#000000"
+            />
+            <Text style={styles.textAddress}>{propiedad.address}</Text>
+          </View>
+          <View style={UtilsStyle.row}>
+            <Ionicons
+              style={styles.icon}
+              name="bed-outline"
+              color="gray"
+              size={20}
+            />
+            <Text style={[styles.textBold, styles.textIcon]}>
+              {propiedad.rooms}
+            </Text>
+            <MaterialCommunityIcons
+              style={styles.icon}
+              name="bathtub-outline"
+              color="gray"
+              size={20}
+            />
+            <Text style={[styles.textBold, styles.textIcon]}>
+              {propiedad.bathrooms}
+            </Text>
+            <MaterialCommunityIcons
+              style={styles.icon}
+              name="floor-plan"
+              color="gray"
+              size={20}
+            />
+            <Text style={[styles.textBold, styles.textIcon]}>
+              {propiedad.surface} mt²
+            </Text>
+          </View>
+          <View style={UtilsStyle.rowSpaceBetween}>
+            <Text style={[styles.textBold, styles.textPrice]}>
+              ${propiedad.rent}/m
+            </Text>
+            {user.uid !== propiedad.userId && (
+              <LikeButton propiedad={propiedad} />
+            )}
+          </View>
         </View>
       </View>
     </View>
