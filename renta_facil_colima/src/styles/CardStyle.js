@@ -2,69 +2,51 @@ import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 
 const styles = StyleSheet.create({
-  item: {
-    borderRadius: 10,
+  container: {
+    alignSelf: 'center',
+    borderRadius: 16,
+    width: '90%',
+    height: 140,
     backgroundColor: Colors.AliceBlue,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    padding: 10,
+    marginBottom: 20,
+  },
+  img: {
+    flex: 1,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  rowMargin: {
+    flex: 1,
     flexDirection: 'row',
+    margin: 15,
+  },
+  col: {
+    flex: 2,
+    marginLeft: 20,
     justifyContent: 'space-between',
   },
-  foto: {
-    width: 90,
-    height: 90,
-    borderRadius: 10,
-  },
-  columna1: {
-    flex: 1,
-    paddingLeft: 10,
-    paddingBottom: 10,
-  },
-  columna2: {
-    flex: 2,
-  },
-  title: {
-    color: Colors.Black,
+  textTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
+    color: Colors.RaisinBlack,
+    fontWeight: '500',
   },
-  addres: {
-    color: Colors.Jet,
-    fontSize: 15,
-  },
-  containerIcons: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  textIcons: {
+  textIcon: {
     marginRight: 15,
-    marginLeft: 8,
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: Colors.Black,
-  },
-  heartAndRentContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  heartContainer: {
-    position: 'absolute',
-    width: 30,
-    height: 30,
-    borderRadius: 30,
-    backgroundColor: Colors.Jade,
-    justifyContent: 'center',
-    alignItems: 'center',
-    right: 0,
-  },
-  heart: {
-    color: Colors.White,
-  },
-  rent: {
-    color: Colors.Black,
-    fontWeight: 'bold',
     fontSize: 16,
+  },
+  textBold: {
+    color: Colors.RaisinBlack,
+    fontWeight: 'bold',
+  },
+  textAddress: {
+    color: 'gray',
+    fontSize: 14,
+  },
+  textPrice: {
+    fontSize: 20,
+  },
+  icon: {
+    marginRight: 10,
   },
 });
 

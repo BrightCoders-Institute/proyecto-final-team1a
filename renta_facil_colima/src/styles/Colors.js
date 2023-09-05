@@ -12,6 +12,7 @@ const Colors = {
   White: '#FFFFFF',
   Red: '#FF0000',
   PakistanGreen: '#04471C',
+  RaisinBlack: '#151525',
 };
 
 export default Colors;

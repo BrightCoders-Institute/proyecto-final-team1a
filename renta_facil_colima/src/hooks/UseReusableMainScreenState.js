@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import UseFiltersModalState from './UseFiltersModalState';
 import GetDataFromFirebase from './GetDataFromFirebase';
 import GetCurrentUser from './GetCurrentUser';
+import GetUserLikes from './GetUserLikes';
 
 const UseReusableMainScreenState = screenType => {
   const user = GetCurrentUser();
@@ -22,7 +23,7 @@ const UseReusableMainScreenState = screenType => {
     MYHOUSES: GetDataFromCollection('Houses', 'created', 6, null, [
       myHousesFilter,
     ]),
-    LIKES: GetDataFromCollection('Houses'), // Replace for my likes when function is ready
+    LIKES: GetUserLikes(),
   };
 
   const homeColors = {

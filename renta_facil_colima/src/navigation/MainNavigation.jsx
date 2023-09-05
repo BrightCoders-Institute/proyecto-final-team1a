@@ -6,6 +6,7 @@ import SignUpScreen from '../View/Screens/SignUpScreen';
 import SplashScreen from '../View/Screens/SplashScreen';
 import MainScreen from '../View/Screens/MainScreen';
 import GetCurrentUser from '../hooks/GetCurrentUser';
+import DetailScreen from '../View/Screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -28,8 +29,7 @@ const MainNavigation = () => {
       <Stack.Screen name="LogIn" component={LoginScreen} />
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="HomeTabs" component={BottomTabsNavigation} />
-      {/* <Stack.Screen name='HouseDetail' component={HouseDetailScreen} /> Descomentar cuando se tenga la screen*/}
-      {/* <Stack.Screen name='HouseDetail' component={HouseDetailScreen} /> Descomentar cuando se tenga la screen*/}
+      <Stack.Screen name='HouseDetail' component={DetailScreen} />
     </Stack.Navigator>
   );
 };
