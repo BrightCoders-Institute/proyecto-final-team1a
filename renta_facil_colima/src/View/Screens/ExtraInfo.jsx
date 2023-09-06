@@ -2,58 +2,108 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import Textinput from '../components/Textinput';
 import BasicButton from '../buttons/BasicButton';
-import UtilsStyle from '../../styles/UtilsStyle';
-import {Formik} from 'formik';
+import {Formik, Field, ErrorMessage} from 'formik';
 import ExtraInfoState from '../../hooks/ExtraInfoState';
 import ExtraInfostyle from '../../styles/ExtraInfoStyle';
 import DateSelector from '../components/DatePicker';
 import PerfilPhoto from '../components/PerfilPhoto';
 
 const ExtraInfo = () => {
+  const {extraInfoSchemaFormInitialValues, extraInfoSchema} = ExtraInfoState();
+
+  const handleSubmit = (values, {setSubmitting,resetForm}) => {
+    console.log('Formulario enviado con los siguientes valores:', values);
+    setSubmitting(false);
+    resetForm();
+  };
+
+  const handleCancel = (formik) => {
+    formik.resetForm();
+  };
+
   return (
     <View style={ExtraInfostyle.container}>
       <View style={ExtraInfostyle.card}>
         <Text style={ExtraInfostyle.titleText}>PROFILE INFORMATION</Text>
-        <View>
-          <View style={ExtraInfostyle.address}>
-            <Textinput
-              placeholder="Address"
-              margen={15}
-              altura={49}
-              padding={10}
-              width={350}
-            />
-          </View>
+        <Formik
+          initialValues={extraInfoSchemaFormInitialValues}
+          validationSchema={extraInfoSchema}
+          onSubmit={handleSubmit}>
+          {({handleChange, handleSubmit, values, errors, touched, resetForm, setFieldValue}) => (
+            <View>
+              <View style={ExtraInfostyle.address}>
+                <Field
+                  name="address"
+                  component={Textinput}
+                  placeholder="Address"
+                  margen={15}
+                  altura={49}
+                  padding={10}
+                  width={350}
+                  value={values.address}
+                  onChangeText={handleChange('address')}
+                />
+                {errors.address && touched.address && (
+                  <Text style={ExtraInfostyle.errorText}>{errors.address}</Text>
+                )}
+              </View>
 
-          <View style={ExtraInfostyle.birthday}>
-            <DateSelector />
-          </View>
+              <View style={ExtraInfostyle.birthday}>
+                <Field name="birthday">
+                  {({field, form}) => (
+                    <DateSelector
+                      value={field.value} // Valor del campo de fecha
+                      onChange={date => form.setFieldValue('birthday', date)} // Función para actualizar el valor
+                    />
+                  )}
+                </Field>
+                <ErrorMessage name="birthday">
+                  {msg => <Text style={ExtraInfostyle.errorText}>{msg}</Text>}
+                </ErrorMessage>
+              </View>
 
-          <View style={ExtraInfostyle.perfilPhoto}>
-            <PerfilPhoto />
-          </View>
-          <View style={ExtraInfostyle.buttonsContainer}>
-            <BasicButton
-              text={'Cancel'}
-              backgroundColor="#FFF"
-              textSize={20}
-              textColor={'#9E9A9A'}
-              height={59}
-              width={150}
-              borderColor={'#B1F1D1'}
-            />
-            <BasicButton
-              text={'Sing Up'}
-              backgroundColor="#FFF"
-              textSize={20}
-              textColor={'#00D25D'}
-              height={59}
-              width={150}
-              borderColor={'#058C42'}
-              shadow={true}
-            />
-          </View>
-        </View>
+              <View style={ExtraInfostyle.perfilPhoto}>
+                <Field
+                  name="profilePicture"
+                  component={PerfilPhoto}
+                />
+                  {errors.profilePicture && touched.address && (
+                  <Text style={ExtraInfostyle.errorText}>{errors.profilePicture}</Text>
+                )}
+
+
+
+              </View>
+              <View style={ExtraInfostyle.buttonsContainer}>
+                <BasicButton
+                  text={'Cancel'}
+                  backgroundColor="#FFF"
+                  textSize={20}
+                  textColor={'#9E9A9A'}
+                  height={59}
+                  width={150}
+                  borderColor={'#B1F1D1'}
+                  onPress={() => {
+                    resetForm();
+                    setFieldValue('profilePicture', '');
+                  }} 
+               
+                />
+                <BasicButton
+                  text={'Sign Up'}
+                  backgroundColor="#FFF"
+                  textSize={20}
+                  textColor={'#00D25D'}
+                  height={59}
+                  width={150}
+                  borderColor={'#058C42'}
+                  shadow={true}
+                  onPress={handleSubmit}
+                />
+              </View>
+            </View>
+          )}
+        </Formik>
       </View>
     </View>
   );

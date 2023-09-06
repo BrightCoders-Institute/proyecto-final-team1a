@@ -1,12 +1,15 @@
 
-import React, {useState} from 'react';
-import { View, Button, Image } from 'react-native';
+import React from 'react';
+import { View, Image } from 'react-native';
 import PickImagesFromGallery from '../../hooks/PickImagesFromGallery';
 import BasicButton from '../buttons/BasicButton';
 import { StyleSheet } from 'react-native';
+import { useFormikContext } from 'formik';
 
 function PerfilPhoto() {
-    const [selectedImageUri, setSelectedImageUri] = useState(null);
+
+  const formik = useFormikContext();
+
 
   const handlePickImage = async () => {
     const result = await PickImagesFromGallery();
@@ -15,15 +18,14 @@ function PerfilPhoto() {
       const uri = result.assets[0].uri;
       console.log('Ruta de la imagen seleccionada:', uri);
 
-      // Puedes mostrar la imagen en tu componente si lo deseas
-      setSelectedImageUri(uri);
+      formik.setFieldValue('profilePicture', uri);
     }
   };
 
   return (
     <View style={styles.container}>
       <BasicButton 
-      text={'Seleccionar imagen'} 
+      text={'Select profile picture'} 
       onPress={handlePickImage}
       textSize={20}
       backgroundColor={'white'}
@@ -32,8 +34,11 @@ function PerfilPhoto() {
       borderColor={'#B1F1D1'}
       
       />
-      {selectedImageUri && (
-        <Image source={{ uri: selectedImageUri }} style={{ width: 200, height: 200 }} />
+      {formik.values.profilePicture && (
+        <Image
+        source={{ uri: formik.values.profilePicture }}
+        style={{ width: 200, height: 200 }}
+      />
       )}
     </View>
   );

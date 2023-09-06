@@ -13,6 +13,7 @@ const DateSelector = () => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    console.log('Fecha seleccionada:', date);
     toggleDatePicker();
   };
 

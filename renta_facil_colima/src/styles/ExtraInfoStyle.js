@@ -55,8 +55,14 @@ const ExtraInfostyle = StyleSheet.create({
   birthday: {
     padding: 10,
 
-  }
+  },
+  errorText: {
+    color: 'red', // Color del texto de error
+    fontSize: 14,  // Tamaño de fuente del texto de error
+    marginTop: 5, // Margen superior para separar el mensaje de error del campo
+  },
 });
+
 
 
 export default ExtraInfostyle;
