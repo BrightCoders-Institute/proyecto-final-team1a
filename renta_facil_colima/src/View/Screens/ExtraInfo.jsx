@@ -5,19 +5,18 @@ import BasicButton from '../buttons/BasicButton';
 import {Formik, Field, ErrorMessage} from 'formik';
 import ExtraInfoState from '../../hooks/ExtraInfoState';
 import ExtraInfostyle from '../../styles/ExtraInfoStyle';
-import DateSelector from '../components/DatePicker';
+import DateSelector from '../components/DateSelector';
 import PerfilPhoto from '../components/PerfilPhoto';
 
 const ExtraInfo = () => {
   const {extraInfoSchemaFormInitialValues, extraInfoSchema} = ExtraInfoState();
 
-  const handleSubmit = (values, {setSubmitting,resetForm}) => {
-    console.log('Formulario enviado con los siguientes valores:', values);
+  const handleSubmit = (values, {setSubmitting, resetForm}) => {
     setSubmitting(false);
     resetForm();
   };
 
-  const handleCancel = (formik) => {
+  const handleCancel = formik => {
     formik.resetForm();
   };
 
@@ -29,7 +28,15 @@ const ExtraInfo = () => {
           initialValues={extraInfoSchemaFormInitialValues}
           validationSchema={extraInfoSchema}
           onSubmit={handleSubmit}>
-          {({handleChange, handleSubmit, values, errors, touched, resetForm, setFieldValue}) => (
+          {({
+            handleChange,
+            handleSubmit,
+            values,
+            errors,
+            touched,
+            resetForm,
+            setFieldValue,
+          }) => (
             <View>
               <View style={ExtraInfostyle.address}>
                 <Field
@@ -49,30 +56,27 @@ const ExtraInfo = () => {
               </View>
 
               <View style={ExtraInfostyle.birthday}>
-                <Field name="birthday">
-                  {({field, form}) => (
-                    <DateSelector
-                      value={field.value} // Valor del campo de fecha
-                      onChange={date => form.setFieldValue('birthday', date)} // Función para actualizar el valor
-                    />
-                  )}
-                </Field>
+                <View style={ExtraInfostyle.birthday}>
+                  <Field name="birthday">
+                    {() => (
+                      <DateSelector
+                        onChange={date => setFieldValue('birthday', date)}
+                      />
+                    )}
+                  </Field>
+                </View>
                 <ErrorMessage name="birthday">
                   {msg => <Text style={ExtraInfostyle.errorText}>{msg}</Text>}
                 </ErrorMessage>
               </View>
 
               <View style={ExtraInfostyle.perfilPhoto}>
-                <Field
-                  name="profilePicture"
-                  component={PerfilPhoto}
-                />
-                  {errors.profilePicture && touched.address && (
-                  <Text style={ExtraInfostyle.errorText}>{errors.profilePicture}</Text>
+                <Field name="profilePicture" component={PerfilPhoto} />
+                {errors.profilePicture && touched.address && (
+                  <Text style={ExtraInfostyle.errorText}>
+                    {errors.profilePicture}
+                  </Text>
                 )}
-
-
-
               </View>
               <View style={ExtraInfostyle.buttonsContainer}>
                 <BasicButton
@@ -86,8 +90,7 @@ const ExtraInfo = () => {
                   onPress={() => {
                     resetForm();
                     setFieldValue('profilePicture', '');
-                  }} 
-               
+                  }}
                 />
                 <BasicButton
                   text={'Sign Up'}
