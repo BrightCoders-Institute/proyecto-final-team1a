@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, View} from 'react-native';
 import Textinput from '../components/Textinput';
 import BasicButton from '../buttons/BasicButton';
@@ -9,15 +9,17 @@ import DateSelector from '../components/DateSelector';
 import PerfilPhoto from '../components/PerfilPhoto';
 
 const ExtraInfo = () => {
+  const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
+
+  const toggleDatePicker = () => {
+    setIsDatePickerVisible(!isDatePickerVisible);
+  };
+
   const {extraInfoSchemaFormInitialValues, extraInfoSchema} = ExtraInfoState();
 
   const handleSubmit = (values, {setSubmitting, resetForm}) => {
     setSubmitting(false);
     resetForm();
-  };
-
-  const handleCancel = formik => {
-    formik.resetForm();
   };
 
   return (
@@ -60,7 +62,14 @@ const ExtraInfo = () => {
                   <Field name="birthday">
                     {() => (
                       <DateSelector
-                        onChange={date => setFieldValue('birthday', date)}
+                        name="birthday"
+                        isDatePickerVisible={isDatePickerVisible}
+                        toggleDatePicker={toggleDatePicker}
+                        selectedDate={values.birthday} // Pasamos la fecha seleccionada
+                        onDateChange={date => {
+                          setFieldValue('birthday', date); // Actualizamos el valor en Formik
+                          toggleDatePicker(); // Cerramos el DatePicker
+                        }}
                       />
                     )}
                   </Field>

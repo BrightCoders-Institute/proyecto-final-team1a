@@ -14,7 +14,7 @@ const useExtraInfoState = () => {
   const extraInfoSchemaFormInitialValues = {
     address: '',
     profilePicture: '',
-    birthday: '',
+    birthday: new Date(),
   };
 
   const extraInfoSchema = createExtraInfoSchema();

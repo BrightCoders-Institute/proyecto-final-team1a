@@ -1,21 +1,16 @@
-import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, Text, TouchableOpacity} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import DateSelectorStyle from '../../styles/DateSelectorStyle';
+import PropTypes from 'prop-types';
 
-const DateSelector = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
-
-  const toggleDatePicker = () => {
-    setIsDatePickerVisible(!isDatePickerVisible);
-  };
-
-  const handleDateChange = date => {
-    setSelectedDate(date);
-    toggleDatePicker();
-  };
-
+const DateSelector = ({
+  name,
+  selectedDate,
+  isDatePickerVisible,
+  toggleDatePicker,
+  onDateChange,
+}) => {
   return (
     <View style={DateSelectorStyle.container}>
       <Text style={DateSelectorStyle.datePickerLabel}>Birthday:</Text>
@@ -31,13 +26,20 @@ const DateSelector = () => {
         <View style={DateSelectorStyle.datePickerContainer}>
           <DatePicker
             date={selectedDate}
-            onDateChange={handleDateChange}
+            onDateChange={date => onDateChange(date)}
             mode="date"
           />
         </View>
       )}
     </View>
   );
+};
+DateSelector.propTypes = {
+  name: PropTypes.string.isRequired,
+  selectedDate: PropTypes.instanceOf(Date).isRequired,
+  isDatePickerVisible: PropTypes.bool.isRequired,
+  toggleDatePicker: PropTypes.func.isRequired,
+  onDateChange: PropTypes.func.isRequired,
 };
 
 export default DateSelector;
