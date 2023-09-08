@@ -1,29 +1,10 @@
-import React, {useState} from 'react';
-import {View, TextInput, TouchableOpacity} from 'react-native';
-import {Chip} from 'react-native-paper';
+import React from 'react';
+import { TextInput, TouchableOpacity } from 'react-native';
+import { Chip } from 'react-native-paper';
 import styles from '../../styles/TagForm';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const TagForm = () => {
-  const [tags, setTags] = useState([]);
-  const [tagInput, setTagInput] = useState('');
-
-  const handleTagInput = text => {
-    setTagInput(text);
-  };
-
-  const addTag = () => {
-    if (tagInput.trim() !== '') {
-      setTags([...tags, tagInput.trim()]);
-      setTagInput('');
-    }
-  };
-
-  const removeTag = index => {
-    const updatedTags = tags.filter((_, i) => i !== index);
-    setTags(updatedTags);
-  };
-
+const TagForm = ({ tagInput, handleTagInput, addTag, tags, removeTag }) => {
   return (
     <View>
       <View style={styles.contenedor}>
@@ -41,12 +22,9 @@ const TagForm = () => {
         </View>
       </View>
 
-      <View style={{flexDirection: 'row', flexWrap: 'wrap', marginTop: 10}}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: 10 }}>
         {tags.map((tag, index) => (
-          <Chip
-            key={index}
-            style={styles.Chip}
-            onClose={() => removeTag(index)}>
+          <Chip key={index} style={styles.Chip} onClose={() => removeTag(index)}>
             {tag}
           </Chip>
         ))}
