@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, TextInput, TouchableOpacity, View,Text} from 'react-native';
-
+import GeolocationStles from '../../styles/GeolocationStyles';
 
 export const GeolocationInput = () => {
     const [location, setLocation] = useState('');
@@ -27,7 +27,7 @@ export const GeolocationInput = () => {
     return <View style={{backgroundColor:'#FFF',marginLeft:10,marginRight:10,marginTop:20,width: 334,
     maxHeight: 300}}>
         <TextInput
-            style={{backgroundColor:'#f2f2f2',fontSize:16,borderColor:'#60DB98',borderRadius:15,borderWidth:1,textTransform:'capitalize',padding:10}}
+            style={GeolocationStles.textInput}
             value={selectedItem || location}
             onChangeText={text => {
                 setLocation(text);
@@ -38,29 +38,18 @@ export const GeolocationInput = () => {
             <FlatList
                 keyboardDismissMode="on-drag"
                 keyboardShouldPersistTaps="handled"
-                style={{ width: 334,
-                    maxHeight: 300,
-                    borderRadius:15,
-                    backgroundColor:''
-                }}
+                style={GeolocationStles.flatlistContainer}
                 data={results}
                 keyExtractor={(_, index) => index.toString()}
                 renderItem={({ item }) => (
                     <TouchableOpacity
-                        style={{
-                            padding: 10,
-                            marginBottom:4,
-                            borderRadius:15,
-                        }}
+                        style={GeolocationStles.directionCard}
                         onPress={() => {
                             setSelectedItem(item);
                             setResults([]);
                             setShowResults(false);
                         }}>
-                        <Text style={{
-                             fontSize: 16,
-                             color: '#000000',
-                        }}>{item}</Text>
+                        <Text style={GeolocationStles.directionText}>{item}</Text>
                     </TouchableOpacity>
                 )}
             />
