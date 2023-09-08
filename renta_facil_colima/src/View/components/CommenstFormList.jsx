@@ -9,7 +9,7 @@ import CommentModalForm from './CommentModalForm';
 const CommenstFormList = ({label, comments, addComment, listMode}) => {
   return (
     <View>
-      <View style={[UtilsStyle.rowCenteredXY]}>
+      <View style={[UtilsStyle.rowCenteredXY, {marginBottom: 20}]}>
         <Text style={CommentsFormListStyle.label}>{label}</Text>
         {!listMode && (
           <View style={CommentsFormListStyle.buttonAdd}>

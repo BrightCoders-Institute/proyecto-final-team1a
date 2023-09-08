@@ -38,6 +38,9 @@ const UtilsStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  aligSelfEnd: {
+    alignSelf: 'flex-end',
+  },
 });
 
 export default UtilsStyle;

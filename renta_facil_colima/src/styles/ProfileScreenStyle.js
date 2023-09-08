@@ -3,17 +3,15 @@ import Colors from './Colors';
 
 const styles = StyleSheet.create({
   MainContainer: {
-    flex: 1,
     backgroundColor: Colors.White,
+    flex: 1,
   },
-
   BotonesInicio: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     width: '100%',
     backgroundColor: Colors.Malachite,
   },
-
   ProfilePhoto: {
     alignItems: 'center',
     borderColor: 'blue',
@@ -27,6 +25,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     width: '100%',
     marginTop: -16,
+    height: '30%',
   },
   Nombre: {
     fontSize: 24,
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     fontFamily: 'ConcertOne-Regular',
   },
-
   TopHouses: {
     fontSize: 24,
     width: '100%',
@@ -46,23 +44,12 @@ const styles = StyleSheet.create({
     fontFamily: 'ConcertOne-Regular',
     color: Colors.Black,
   },
-
-  TitleComments: {
-    fontSize: 24,
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    paddingTop: 5,
-    paddingBottom: 5,
-    width: '100%',
-    fontFamily: 'ConcertOne-Regular',
-    color: Colors.Black,
-  },
-
   Comments: {
-    marginBottom: 30,
+    width: '100%',
+    height: '35%',
   },
-  space: {
-    height: 20,
+  housesContainer: {
+    height: '35%',
   },
 });
 

@@ -39,7 +39,7 @@ const UseProfileScreenState = user => {
   const handleAddComment = async comment => {
     const commentObject = await CreateComment('PROFILE', comment, user.uid);
     if (commentObject) {
-      setComments([...comments, commentObject]);
+      setComments([commentObject, ...comments]);
     }
   };
 
