@@ -15,6 +15,15 @@ const UtilsStyle = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  rowCenteredVertical: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  rowCenteredXY: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   rowSpaceAround: {
     flexDirection: 'row',
     justifyContent: 'space-around',

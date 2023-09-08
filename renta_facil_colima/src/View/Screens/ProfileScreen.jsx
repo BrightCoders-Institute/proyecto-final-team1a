@@ -3,12 +3,19 @@ import {Text, ScrollView, View} from 'react-native';
 import styles from '../../styles/ProfileScreenStyle';
 import SettingsButton from '../components/Settings';
 import {Avatar} from 'react-native-paper';
-import CommentComponent from '../components/CommentComponent';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Card from '../components/card';
+import CommentFormList from '../components/CommenstFormList';
 
 const ProfileScreen = ({navigation}) => {
+  const [houses, setHouses] = React.useState([]);
+  const [comments, setComments] = React.useState([]);
+  const handleAddComment = comment => {
+    setComments([...comments, comment]);
+  };
+  const insets = useSafeAreaInsets();
   return (
-    <View style={styles.MainContainer}>
+    <View style={[styles.MainContainer, {paddingBottom: insets.bottom}]}>
       <View style={styles.BotonesInicio}>
         <SettingsButton />
       </View>
@@ -24,20 +31,23 @@ const ProfileScreen = ({navigation}) => {
         <View>
           <Text style={styles.TopHouses}>Top 5 casas de Geros</Text>
         </View>
-        <Card propiedad={{title: 'Altozano'}} />
-        <Card propiedad={{title: 'Altozano'}} />
-        <Card propiedad={{title: 'Altozano'}} />
-        <Card propiedad={{title: 'Altozano'}} />
-        <Card propiedad={{title: 'Altozano'}} />
-        <View style={styles.Comments}>
-          <Text style={styles.TitleComments}> Opiniones sobre Geros </Text>
-          <CommentComponent />
-          <View style={styles.space} />
-          <CommentComponent />
-          <View style={styles.space} />
-          <CommentComponent />
-        </View>
+        {houses.length > 0 ? (
+          houses.map(house => <Card propiedad={house} key={house.id} />)
+        ) : (
+          <Text style={styles.TitleComments}>
+            This uses don't have houses yet :{'('}
+          </Text>
+        )}
       </ScrollView>
+      <View style={styles.Comments}>
+        <CommentFormList
+          label="Thoughts about"
+          listMode={false}
+          comments={comments}
+          addComment={handleAddComment}
+          screen={'PROFILE'}
+        />
+      </View>
     </View>
   );
 };

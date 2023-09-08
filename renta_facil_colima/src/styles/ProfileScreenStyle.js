@@ -59,9 +59,7 @@ const styles = StyleSheet.create({
   },
 
   Comments: {
-    padding: 5,
-    width: '100%',
-    justifyContent: 'space-between',
+    marginBottom: 30,
   },
   space: {
     height: 20,
