@@ -6,7 +6,7 @@ import UtilsStyle from '../../styles/UtilsStyle';
 import CommentsFormListStyle from '../../styles/CommentsFormListStyle';
 import CommentModalForm from './CommentModalForm';
 
-const CommenstFormList = ({label, comments, addComment, screen, listMode}) => {
+const CommenstFormList = ({label, comments, addComment, listMode}) => {
   return (
     <View>
       <View style={[UtilsStyle.rowCenteredXY]}>
@@ -20,9 +20,13 @@ const CommenstFormList = ({label, comments, addComment, screen, listMode}) => {
       <FlatList
         data={comments}
         renderItem={({item}) => (
-          <CommentComponent text="Geros" date={Date.now()} comment={item} />
+          <CommentComponent
+            text={item.userName}
+            date={item.created.toDate().toDateString()}
+            comment={item.comment}
+          />
         )}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={item => item.id}
       />
     </View>
   );

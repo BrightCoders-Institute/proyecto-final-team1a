@@ -32,6 +32,12 @@ const UtilsStyle = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  loadingContainer: {
+    backgroundColor: Colors.White,
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default UtilsStyle;
