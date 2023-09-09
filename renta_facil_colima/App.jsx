@@ -36,13 +36,13 @@ const navTheme = {
 
 function App() {
   return (
-    <PaperProvider theme={theme}>
-      <SafeAreaProvider>
-        <NavigationContainer theme={navTheme}>
-          <MainNavigation />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </PaperProvider>
+    <SafeAreaProvider>
+      <PaperProvider theme={theme}>
+          <NavigationContainer theme={navTheme}>
+            <MainNavigation />
+          </NavigationContainer>
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 }
 

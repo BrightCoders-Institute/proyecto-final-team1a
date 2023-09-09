@@ -7,7 +7,6 @@ const CommentComponentStyles = StyleSheet.create({
     backgroundColor: Colors.White,
     borderWidth: 1,
     borderColor: Colors.SeaGreen,
-    backgroundColor: Colors.White,
     borderRadius: 10,
     shadowColor: Colors.Black,
     shadowOpacity: 0.3,
@@ -15,6 +14,7 @@ const CommentComponentStyles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 5,
     width: '95%',
+    marginTop: 20,
   },
   titulo: {
     fontSize: 28,
@@ -22,7 +22,6 @@ const CommentComponentStyles = StyleSheet.create({
     marginLeft: 8,
     color: Colors.Black,
     fontFamily: 'ConcertOne-Regular',
-
   },
   comment: {
     marginLeft: 8,

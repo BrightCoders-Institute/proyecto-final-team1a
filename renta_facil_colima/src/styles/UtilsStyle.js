@@ -15,6 +15,15 @@ const UtilsStyle = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  rowCenteredVertical: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  rowCenteredXY: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   rowSpaceAround: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -22,6 +31,15 @@ const UtilsStyle = StyleSheet.create({
   rowSpaceBetween: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  loadingContainer: {
+    backgroundColor: Colors.White,
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  aligSelfEnd: {
+    alignSelf: 'flex-end',
   },
 });
 

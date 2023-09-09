@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Colors from './Colors';
 const DetailScreenStyles = StyleSheet.create({
   propietyName: {
     color: 'black',
@@ -24,16 +25,10 @@ const DetailScreenStyles = StyleSheet.create({
     fontSize: 15,
   },
   commentsContainer: {
-    backgroundColor: 'green',
-    width: 375,
-    height: 300,
-    borderRadius: 15,
-    alignItems: 'center',
-  },
-  commentsTitle: {
-    color: 'white',
-    fontSize: 15,
-    textTransform: 'uppercase',
+    backgroundColor: Colors.Jade,
+    height: 500,
+    borderRadius: 10,
+    width: '100%',
   },
 });
 

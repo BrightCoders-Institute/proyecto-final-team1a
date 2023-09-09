@@ -1,29 +1,27 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { Carrucel } from '../components/Carrucel';
+import {Text, View} from 'react-native';
+import {Carrucel} from '../components/Carrucel';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import CommentComponent from '../components/CommentComponent';
 import DetailScreenStyles from '../../styles/DetailScreenStyles';
+import CommentFormList from '../components/CommenstFormList';
+import UseDetailScreenState from '../../hooks/UseDetailScreenState';
+
 const DetailScreen = ({route}) => {
   const {house} = route.params;
+  const {comments, handleAddComment} = UseDetailScreenState(house.id);
   return (
-    <View style={{ alignItems: 'center' }}>
+    <View style={{alignItems: 'center'}}>
       <Carrucel />
-      <Text style={DetailScreenStyles.propietyName}>
-        {house.title}
-      </Text>
-
-      <View style={{ alignItems: 'flex-start' }}>
+      <Text style={DetailScreenStyles.propietyName}>{house.title}</Text>
+      <View style={{alignItems: 'flex-start'}}>
         <Text>
           {' '}
           <EvilIcons name={'location'} size={24} color={'black'} />
           {house.address}
         </Text>
       </View>
-
-      <View
-        style={DetailScreenStyles.containerInfo}>
+      <View style={DetailScreenStyles.containerInfo}>
         <Text>
           <MaterialCommunityIcons
             name={'bed-queen-outline'}
@@ -32,7 +30,6 @@ const DetailScreen = ({route}) => {
           />
           {house.rooms}
         </Text>
-
         <Text>
           <MaterialCommunityIcons
             name={'bathtub-outline'}
@@ -41,7 +38,6 @@ const DetailScreen = ({route}) => {
           />
           {house.bathrooms}
         </Text>
-
         <Text>
           <MaterialCommunityIcons
             name={'social-distance-2-meters'}
@@ -51,15 +47,21 @@ const DetailScreen = ({route}) => {
           {house.surface}mt²
         </Text>
       </View>
-
       <View style={DetailScreenStyles.descriptionConatiner}>
-        <Text style={DetailScreenStyles.houseDescription}>House Description</Text>
+        <Text style={DetailScreenStyles.houseDescription}>
+          House Description
+        </Text>
         <Text>{house.description}</Text>
       </View>
       <View style={DetailScreenStyles.commentsContainer}>
-        <Text style={DetailScreenStyles.commentsTitle}>Comments</Text>
-        <CommentComponent />
-        <CommentComponent />
+        <View style={{flex: 1, marginBottom: 150}}>
+          <CommentFormList
+            label="Comments"
+            listMode={false}
+            comments={comments}
+            addComment={handleAddComment}
+          />
+        </View>
       </View>
     </View>
   );
