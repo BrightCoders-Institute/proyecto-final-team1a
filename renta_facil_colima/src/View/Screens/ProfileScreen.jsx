@@ -15,7 +15,7 @@ const ProfileScreen = ({route}) => {
   const {houses, profileData, comments, handleAddComment, loading} =
     UseProfileScreenState(user);
   return (
-    <View style={[styles.MainContainer, {paddingBottom: 60}]}>
+    <View style={[styles.MainContainer]}>
       {loading && (
         <View style={UtilsStyle.loadingContainer}>
           <ActivityIndicator animating={true} color="#CDB4DB" size="large" />
@@ -45,7 +45,7 @@ const ProfileScreen = ({route}) => {
             {houses.length > 0 ? (
               <List data={houses} />
             ) : (
-              <Text style={styles.TitleComments}>
+              <Text style={styles.TopHouses}>
                 This uses don't have houses yet :{'('}
               </Text>
             )}

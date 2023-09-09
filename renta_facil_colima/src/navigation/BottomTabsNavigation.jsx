@@ -12,6 +12,7 @@ const BottomTabsNavigation = () => {
   return (
     <Tab.Navigator
       activeColor="white"
+      safeAreaInsets={{top: 10}}
       initialRouteName="Home"
       inactiveColor="#434343"
       backBehavior="history"

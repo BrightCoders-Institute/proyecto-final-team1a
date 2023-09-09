@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     width: '100%',
     marginTop: -16,
-    height: '30%',
+    height: 250
   },
   Nombre: {
     fontSize: 24,
