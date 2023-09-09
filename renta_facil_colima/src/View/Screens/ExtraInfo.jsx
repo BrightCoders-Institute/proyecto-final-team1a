@@ -7,6 +7,8 @@ import ExtraInfoState from '../../hooks/ExtraInfoState';
 import ExtraInfostyle from '../../styles/ExtraInfoStyle';
 import DateSelector from '../components/DateSelector';
 import PerfilPhoto from '../components/PerfilPhoto';
+import auth from '@react-native-firebase/auth';
+
 
 const ExtraInfo = () => {
   const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
@@ -17,9 +19,42 @@ const ExtraInfo = () => {
 
   const {extraInfoSchemaFormInitialValues, extraInfoSchema} = ExtraInfoState();
 
-  const handleSubmit = (values, {setSubmitting, resetForm}) => {
+  const handleSubmit = async (values, {setSubmitting, resetForm}) => {
+
+    try {
+      // Obtén el usuario actualmente autenticado
+      const user = auth().currentUser;
+  
+      // Verifica si hay un usuario autenticado
+      if (user) {
+        // Crea o actualiza el documento en la colección "UserExtraInfo"
+        const userDocRef = firestore().collection('UserExtraInfo').doc(user.uid);
+  
+        // Los datos que deseas almacenar en el documento
+        const userData = {
+          address: values.address,
+          birthday: values.birthday,
+          // Otras propiedades si las tienes
+        };
+  
+        // Verifica si el documento ya existe antes de crearlo o actualizarlo
+        const docSnapshot = await userDocRef.get();
+        if (docSnapshot.exists) {
+          // El documento ya existe, actualiza sus datos
+          await userDocRef.update(userData);
+        } else {
+          // El documento no existe, créalo
+          await userDocRef.set(userData);
+        }
+
+
     setSubmitting(false);
     resetForm();
+  }
+} catch (error) {
+  // Manejo de errores si es necesario
+  console.error('Error al guardar la información en Firestore:', error);
+}
   };
 
   return (
