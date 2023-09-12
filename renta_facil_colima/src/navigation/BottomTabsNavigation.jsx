@@ -12,7 +12,6 @@ const BottomTabsNavigation = () => {
   return (
     <Tab.Navigator
       activeColor="white"
-      safeAreaInsets={{top: 10}}
       initialRouteName="Home"
       inactiveColor="#434343"
       backBehavior="history"
@@ -31,7 +30,7 @@ const BottomTabsNavigation = () => {
       />
       <Tab.Screen
         name="MyHouses"
-        component={ReusableMainScreen} // Cambiar por MyHousesScreen cuando este 
+        component={ReusableMainScreen} // Cambiar por MyHousesScreen cuando este
         options={{
           tabBarColor: '#84A9C0',
           tabBarLabel: 'My houses',
@@ -51,7 +50,7 @@ const BottomTabsNavigation = () => {
           ),
         }}
         initialParams={{screenType: 'LIKES'}}
-      /> 
+      />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}

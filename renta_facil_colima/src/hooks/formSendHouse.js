@@ -9,6 +9,8 @@ const FormSendHouse = () => {
     title: '',
     description: '',
     address: '',
+    latitude: '',
+    longitude: '',
     rooms: '',
     bathrooms: '',
     surface: '',
@@ -17,7 +19,9 @@ const FormSendHouse = () => {
 
   const formSchema = Yup.object().shape({
     title: Yup.string().required('Title field can not be empty'),
-    address: Yup.string().required('Location field can not be empty'),
+    address: Yup.string().required('Address field can not be empty'),
+    latitude: Yup.string().default('0'),
+    longitude: Yup.string().default('0'),
     rooms: Yup.number()
       .positive()
       .integer()
@@ -39,16 +43,11 @@ const FormSendHouse = () => {
     setIsVisible(false);
   };
 
-  const handleAddHouse = async ({
-    title,
-    description,
-    address,
-    rooms,
-    bathrooms,
-    surface,
-    rent,
-  }) => {
-    await useAddHouse(title, address, rooms, bathrooms, surface, rent);
+  const handleAddHouse = async (values, setLoading, getHouses) => {
+    setLoading(true);
+    await useAddHouse(values);
+    await getHouses();
+    setLoading(false);
   };
 
   return {

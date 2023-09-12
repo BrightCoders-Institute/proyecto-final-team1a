@@ -7,6 +7,7 @@ import FormSendHouse from '../../hooks/formSendHouse';
 import UtilsStyle from '../../styles/UtilsStyle';
 import BasicButton from '../buttons/BasicButton';
 import Colors from '../../styles/Colors';
+import GeolocationInput from './GeolocationInput';
 import {Formik} from 'formik';
 const FormAdd = ({visibility, sendHouse, cancel}) => {
   const {formSchema, formInitialValues} = FormSendHouse();
@@ -16,9 +17,13 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
         <Headline style={styleForm.title}>Add a new house</Headline>
         <Formik
           initialValues={formInitialValues}
-          onSubmit={sendHouse}
-          validationSchema={formSchema}>
-          {({handleChange, handleSubmit, values, errors}) => (
+          onSubmit={(values, actions) => {
+            sendHouse(values);
+            actions.resetForm();
+          }}
+          validationSchema={formSchema}
+          onReset={() => cancel()}>
+          {({handleChange, handleReset, handleSubmit, values, errors}) => (
             <ScrollView>
               <Card style={styleForm.cardStyle}>
                 <Card.Content>
@@ -85,17 +90,11 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
                     </View>
                   </View>
                   <Text style={styleForm.inputText}>Address</Text>
-                  <Textinput
-                    altura={53}
-                    padding={10}
-                    margen={20}
-                    value={values.address}
-                    onChangeText={handleChange('address')}
-                  />
+                  <GeolocationInput />
                   <HelperText
                     type="error"
                     visible={errors.address}
-                    style={[UtilsStyle.errorText, styleForm.localError]}>
+                    style={[UtilsStyle.errorText]}>
                     {errors.address}
                   </HelperText>
                   <View style={UtilsStyle.row}>
@@ -136,7 +135,7 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
                   </View>
                   <View style={UtilsStyle.rowSpaceAround}>
                     <BasicButton
-                      onPress={cancel}
+                      onPress={handleReset}
                       text="Cancel"
                       textSize={18}
                       backgroundColor={Colors.White}
