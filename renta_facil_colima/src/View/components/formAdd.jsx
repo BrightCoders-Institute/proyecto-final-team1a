@@ -9,6 +9,8 @@ import BasicButton from '../buttons/BasicButton';
 import Colors from '../../styles/Colors';
 import GeolocationInput from './GeolocationInput';
 import {Formik} from 'formik';
+import TagForm from './TagForm';
+import HousesImagesForm from './HouseImagesForm';
 const FormAdd = ({visibility, sendHouse, cancel}) => {
   const {formSchema, formInitialValues} = FormSendHouse();
   return (
@@ -18,8 +20,9 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
         <Formik
           initialValues={formInitialValues}
           onSubmit={(values, actions) => {
-            sendHouse(values);
+            const valuesToSend = values;
             actions.resetForm();
+            sendHouse(valuesToSend);
           }}
           validationSchema={formSchema}
           onReset={() => cancel()}>
@@ -133,6 +136,16 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
                       </HelperText>
                     </View>
                   </View>
+                  <Text style={[styleForm.inputText, {marginBottom: 0}]}>
+                    Images
+                  </Text>
+                  <HousesImagesForm images={values.images} />
+                  <HelperText
+                    type="error"
+                    visible={errors.images}
+                    style={[UtilsStyle.errorText]}>
+                    {errors.images}
+                  </HelperText>
                   <View style={UtilsStyle.rowSpaceAround}>
                     <BasicButton
                       onPress={handleReset}

@@ -1,10 +1,12 @@
 import firestore from '@react-native-firebase/firestore';
 import GetCurrentUser from '../hooks/GetCurrentUser';
 import {Alert} from 'react-native';
+import SaveImagesAction from './SaveImagesAction';
 
 const AddHouse = async values => {
   try {
     const user = GetCurrentUser();
+    const imagesUrl = await SaveImagesAction(values.images, user.uid);
     const docRef = await firestore()
       .collection('Houses')
       .add({
@@ -16,6 +18,7 @@ const AddHouse = async values => {
         bathrooms: values.bathrooms,
         surface: values.surface,
         rent: values.rent,
+        images: firestore.FieldValue.arrayUnion(...imagesUrl),
         userId: user.uid,
         created: firestore.FieldValue.serverTimestamp(),
       });

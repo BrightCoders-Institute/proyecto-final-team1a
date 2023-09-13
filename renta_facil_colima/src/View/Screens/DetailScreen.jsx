@@ -12,7 +12,7 @@ const DetailScreen = ({route}) => {
   const {comments, handleAddComment} = UseDetailScreenState(house.id);
   return (
     <View style={{alignItems: 'center'}}>
-      <Carrucel />
+      <Carrucel images={house.images} />
       <Text style={DetailScreenStyles.propietyName}>{house.title}</Text>
       <View style={{alignItems: 'flex-start'}}>
         <Text>

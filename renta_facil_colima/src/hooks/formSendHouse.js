@@ -15,6 +15,8 @@ const FormSendHouse = () => {
     bathrooms: '',
     surface: '',
     rent: '',
+    tags: [],
+    images: [],
   };
 
   const formSchema = Yup.object().shape({
@@ -33,6 +35,9 @@ const FormSendHouse = () => {
     description: Yup.string().required('Description field can not be empty'),
     surface: Yup.number().positive().required('Surface field can not be empty'),
     rent: Yup.number().positive().required('Price field can not be empty'),
+    images: Yup.array()
+      .required('Images field can not be empty')
+      .min(1, 'You must add at least one image'),
   });
 
   const openHouseForm = () => {
