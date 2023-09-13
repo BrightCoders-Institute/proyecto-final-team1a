@@ -25,7 +25,6 @@ const GetUserLikes = async () => {
       return data;
     }
   } catch (error) {
-    console.log(error.message);
     Alert.alert('Error', 'Error at getting your likes');
   }
 };
