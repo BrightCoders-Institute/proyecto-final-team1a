@@ -19,7 +19,7 @@ const CreateUser = async (
       firstName,
       lastName,
       phoneNumber,
-      'Active Account': false,
+      activeAccount: false,
     });
 
     return {success: true, user};

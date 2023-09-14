@@ -21,7 +21,7 @@ const LoginScreen = ({navigation}) => {
   const googleSign = async () => {
     const response = await GoogleSignUp();
     if (response) {
-      navigation.navigate('HomeTabs');
+      navigation.navigate(response);
     }
   };
 

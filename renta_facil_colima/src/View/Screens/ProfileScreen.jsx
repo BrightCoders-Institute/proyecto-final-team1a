@@ -8,6 +8,7 @@ import List from '../components/List';
 import CommentFormList from '../components/CommenstFormList';
 import UseProfileScreenState from '../../hooks/UseProfileScreenState';
 import GetCurrentUser from '../../hooks/GetCurrentUser';
+import LogOut from '../components/LogOut';
 
 const ProfileScreen = ({route}) => {
   const user =
@@ -25,6 +26,7 @@ const ProfileScreen = ({route}) => {
         <View style={{flex: 1}}>
           <View style={styles.ProfilePhoto}>
             <View style={UtilsStyle.aligSelfEnd}>
+              <LogOut/>
               <SettingsButton />
             </View>
             <Avatar.Image

@@ -18,7 +18,7 @@ const SignUser = async (email, password) => {
       .get();
     const userData = userDoc.data();
 
-    if (userData && userData['Active Account'] === false) {
+    if (userData && !userData.activeAccount) {
       navigation.navigate('ExtraInfo');
     } else {
       navigation.navigate('MainScreen');

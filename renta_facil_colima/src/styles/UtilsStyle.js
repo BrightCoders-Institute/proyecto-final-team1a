@@ -39,7 +39,13 @@ const UtilsStyle = StyleSheet.create({
     justifyContent: 'center',
   },
   aligSelfEnd: {
-    alignSelf: 'flex-end',
+
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    width: 385,
+  
+
+
   },
 });
 
