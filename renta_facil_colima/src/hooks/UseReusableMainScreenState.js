@@ -3,6 +3,7 @@ import UseFiltersModalState from './UseFiltersModalState';
 import GetDataFromFirebase from './GetDataFromFirebase';
 import GetCurrentUser from './GetCurrentUser';
 import GetUserLikes from './GetUserLikes';
+import FormSendHouse from './formSendHouse';
 
 const UseReusableMainScreenState = screenType => {
   const user = GetCurrentUser();
@@ -11,6 +12,8 @@ const UseReusableMainScreenState = screenType => {
   const [search, setSearch] = useState('');
   const {modalVisible, openModal, closeModal} = UseFiltersModalState();
   const [loading, setLoading] = useState(true);
+  const {openHouseForm, isVisible, closeHouseForm, handleAddHouse} =
+    FormSendHouse();
 
   const myHousesFilter = {
     field: 'userId',
@@ -57,6 +60,15 @@ const UseReusableMainScreenState = screenType => {
     // Future logic to search
   };
 
+  const addHouseFunction = values => {
+    handleAddHouse(values, setLoading, getScreenHouses);
+  };
+
+  const getScreenHouses = async () => {
+    const response = await functionsGetData[screenType];
+    setHouses(response);
+  };
+
   const screenColor = () => {
     return homeColors[screenType];
   };
@@ -73,6 +85,10 @@ const UseReusableMainScreenState = screenType => {
     handleSearchFilter,
     handleSearch,
     screenColor,
+    openHouseForm,
+    isVisible,
+    closeHouseForm,
+    addHouseFunction,
   };
 };
 

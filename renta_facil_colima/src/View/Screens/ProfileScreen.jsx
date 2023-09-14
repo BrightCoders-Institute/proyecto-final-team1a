@@ -16,7 +16,7 @@ const ProfileScreen = ({route}) => {
   const {houses, profileData, comments, handleAddComment, loading} =
     UseProfileScreenState(user);
   return (
-    <View style={[styles.MainContainer]}>
+    <View style={[styles.MainContainer, {marginBottom: 68}]}>
       {loading && (
         <View style={UtilsStyle.loadingContainer}>
           <ActivityIndicator animating={true} color="#CDB4DB" size="large" />

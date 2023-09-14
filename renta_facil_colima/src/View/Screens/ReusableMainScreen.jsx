@@ -7,7 +7,6 @@ import FiltersModal from '../components/FiltersModal';
 import {ActivityIndicator} from 'react-native-paper';
 import FormAdd from '../components/formAdd';
 import UseReusableMainScreenState from '../../hooks/UseReusableMainScreenState';
-import FormSendHouse from '../../hooks/formSendHouse';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {FAB} from 'react-native-paper';
 const ReusableMainScreen = ({route}) => {
@@ -23,19 +22,16 @@ const ReusableMainScreen = ({route}) => {
     handleSearchFilter,
     handleSearch,
     screenColor,
+    openHouseForm,
+    isVisible,
+    closeHouseForm,
+    addHouseFunction,
   } = UseReusableMainScreenState(screenType);
-
-  const {openHouseForm, isVisible, closeHouseForm, handleAddHouse} =
-    FormSendHouse();
 
   const insets = useSafeAreaInsets();
 
   return (
-    <View
-      style={[
-        ReusableMainScreenStyle.mainContainer,
-        {paddingBottom: insets.bottom},
-      ]}>
+    <View style={[ReusableMainScreenStyle.mainContainer, {marginBottom: 140}]}>
       {screenType === 'HOME' && (
         <FiltersModal
           modalVisible={modalVisible}
@@ -47,7 +43,7 @@ const ReusableMainScreen = ({route}) => {
         <FormAdd
           visibility={isVisible}
           cancel={closeHouseForm}
-          sendHouse={handleAddHouse}
+          sendHouse={addHouseFunction}
         />
       )}
       <View style={ReusableMainScreenStyle.headerContainer}>
