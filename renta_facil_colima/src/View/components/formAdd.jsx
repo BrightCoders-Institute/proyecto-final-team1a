@@ -7,7 +7,10 @@ import FormSendHouse from '../../hooks/formSendHouse';
 import UtilsStyle from '../../styles/UtilsStyle';
 import BasicButton from '../buttons/BasicButton';
 import Colors from '../../styles/Colors';
+import GeolocationInput from './GeolocationInput';
 import {Formik} from 'formik';
+import TagForm from './TagForm';
+import HousesImagesForm from './HouseImagesForm';
 const FormAdd = ({visibility, sendHouse, cancel}) => {
   const {formSchema, formInitialValues} = FormSendHouse();
   return (
@@ -16,9 +19,14 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
         <Headline style={styleForm.title}>Add a new house</Headline>
         <Formik
           initialValues={formInitialValues}
-          onSubmit={sendHouse}
-          validationSchema={formSchema}>
-          {({handleChange, handleSubmit, values, errors}) => (
+          onSubmit={(values, actions) => {
+            const valuesToSend = values;
+            actions.resetForm();
+            sendHouse(valuesToSend);
+          }}
+          validationSchema={formSchema}
+          onReset={() => cancel()}>
+          {({handleChange, handleReset, handleSubmit, values, errors}) => (
             <ScrollView>
               <Card style={styleForm.cardStyle}>
                 <Card.Content>
@@ -85,17 +93,11 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
                     </View>
                   </View>
                   <Text style={styleForm.inputText}>Address</Text>
-                  <Textinput
-                    altura={53}
-                    padding={10}
-                    margen={20}
-                    value={values.address}
-                    onChangeText={handleChange('address')}
-                  />
+                  <GeolocationInput />
                   <HelperText
                     type="error"
                     visible={errors.address}
-                    style={[UtilsStyle.errorText, styleForm.localError]}>
+                    style={[UtilsStyle.errorText]}>
                     {errors.address}
                   </HelperText>
                   <View style={UtilsStyle.row}>
@@ -134,9 +136,19 @@ const FormAdd = ({visibility, sendHouse, cancel}) => {
                       </HelperText>
                     </View>
                   </View>
+                  <Text style={[styleForm.inputText, {marginBottom: 0}]}>
+                    Images
+                  </Text>
+                  <HousesImagesForm images={values.images} />
+                  <HelperText
+                    type="error"
+                    visible={errors.images}
+                    style={[UtilsStyle.errorText]}>
+                    {errors.images}
+                  </HelperText>
                   <View style={UtilsStyle.rowSpaceAround}>
                     <BasicButton
-                      onPress={cancel}
+                      onPress={handleReset}
                       text="Cancel"
                       textSize={18}
                       backgroundColor={Colors.White}

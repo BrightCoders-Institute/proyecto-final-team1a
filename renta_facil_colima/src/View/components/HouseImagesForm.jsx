@@ -5,19 +5,21 @@ import {View} from 'react-native';
 import Colors from '../../styles/Colors';
 import HouseImageFormStyle from '../../styles/HouseImageFormStyle';
 import UseHouseImagesFormState from '../../hooks/UseHouseImagesFormState';
+import {useFormikContext} from 'formik';
 
-const HousesImagesForm = ({images, updateImages}) => {
+const HousesImagesForm = ({images}) => {
+  const {setFieldValue} = useFormikContext();
   const {handlePickImages, onAddItems, onDelete} = UseHouseImagesFormState();
 
   const handleSelectImages = async () => {
     const imagesUriArray = await handlePickImages();
     const newArray = onAddItems(images, imagesUriArray);
-    updateImages(newArray);
+    setFieldValue('images', newArray);
   };
 
   const handleDelete = index => {
     const newArray = onDelete(images, index);
-    updateImages(newArray);
+    setFieldValue('images', newArray);
   };
 
   return (

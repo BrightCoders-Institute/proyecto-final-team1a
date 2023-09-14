@@ -53,7 +53,6 @@ const CommentsDataFirebase = () => {
       });
       return comments;
     } catch (e) {
-      console.log(e.message);
       Alert.alert('Error getting comments', e.message);
     }
   };

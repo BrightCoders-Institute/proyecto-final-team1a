@@ -23,7 +23,6 @@ const GetDataFromFirebase = () => {
       });
       return data;
     } catch (error) {
-      console.log(error.message);
       Alert.alert('Error', `We could not get the ${collectionName} data`);
     }
   };

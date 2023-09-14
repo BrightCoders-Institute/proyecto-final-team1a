@@ -23,7 +23,6 @@ const useExtraInfoState = () => {
   };
 
   const extraInfoSchema = createExtraInfoSchema();
-  console.log((new Date((fechaMinima) )))
   return {
     extraInfoSchemaFormInitialValues,
     extraInfoSchema,

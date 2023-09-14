@@ -13,10 +13,12 @@ const Card = ({propiedad}) => {
   const navigation = useNavigation();
   const user = GetCurrentUser();
   return (
-    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('HouseDetail', {house: propiedad})}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('HouseDetail', {house: propiedad})}>
       <View style={styles.rowMargin}>
         <ImageBackground
-          source={require('../../assets/img/casa.jpg')}
+          source={{uri: propiedad.images[0]}}
           style={styles.img}
         />
         <View style={styles.col}>
