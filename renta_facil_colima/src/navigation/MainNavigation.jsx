@@ -7,6 +7,7 @@ import SplashScreen from '../View/Screens/SplashScreen';
 import MainScreen from '../View/Screens/MainScreen';
 import GetCurrentUser from '../hooks/GetCurrentUser';
 import DetailScreen from '../View/Screens/DetailScreen';
+import ReusableMainScreen from '../View/Screens/ReusableMainScreen';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ const MainNavigation = () => {
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="HomeTabs" component={BottomTabsNavigation} />
       <Stack.Screen name='HouseDetail' component={DetailScreen} />
+      <Stack.Screen name='ReusableMainScreen' component={ReusableMainScreen} />
     </Stack.Navigator>
   );
 };

@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {Text, View,Button} from 'react-native';
 import Lista from '../components/List';
 import SearchBar from '../components/SearchBar';
 import ReusableMainScreenStyle from '../../styles/ReusableMainScreenStyle';
@@ -9,6 +9,7 @@ import FormAdd from '../components/formAdd';
 import UseReusableMainScreenState from '../../hooks/UseReusableMainScreenState';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {FAB} from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 const ReusableMainScreen = ({route}) => {
   const {screenType} = route.params;
   const {
@@ -26,12 +27,22 @@ const ReusableMainScreen = ({route}) => {
     isVisible,
     closeHouseForm,
     addHouseFunction,
+    onRefresh,
+    setHouses,
+    refresh,
+    setLoading,
+    functionsGetData,
   } = UseReusableMainScreenState(screenType);
 
   const insets = useSafeAreaInsets();
-
+  const navigation = useNavigation();
+  
   return (
     <View style={[ReusableMainScreenStyle.mainContainer, {marginBottom: 140}]}>
+     <Button
+        title='Refresh'
+        onPress={()=>onRefresh()}
+      />
       {screenType === 'HOME' && (
         <FiltersModal
           modalVisible={modalVisible}
@@ -74,7 +85,7 @@ const ReusableMainScreen = ({route}) => {
           />
         </View>
       )}
-      {!loading && <Lista data={houses} />}
+      <Lista data={houses} refresh={refresh} />
       {screenType === 'MYHOUSES' && (
         <FAB
           style={ReusableMainScreenStyle.fab}
