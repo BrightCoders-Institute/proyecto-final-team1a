@@ -17,7 +17,7 @@ const AddHouse = async values => {
         rooms: values.rooms,
         bathrooms: values.bathrooms,
         surface: values.surface,
-        rent: values.rent,
+        rent: parseFloat(values.rent),
         images: firestore.FieldValue.arrayUnion(...imagesUrl),
         userId: user.uid,
         created: firestore.FieldValue.serverTimestamp(),

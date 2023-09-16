@@ -23,9 +23,9 @@ const SearchBarStyles = StyleSheet.create({
     color: Colors.Black,
     height: '100%',
     marginLeft: 10,
-    width: '74%',
+    width: '65%',
     fontSize: 24,
-    fontFamily: 'ConcertOne-Regular'
+    fontFamily: 'ConcertOne-Regular',
   },
   icon: {
     marginRight: 8,
