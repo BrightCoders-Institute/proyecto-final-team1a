@@ -1,6 +1,6 @@
 import storage from '@react-native-firebase/storage';
 import {v4 as uuidv4} from 'uuid';
-import GetImageExtensionByUri from '../utils/getImageExtensionByUri';
+import GetImageExtensionByUri from '../utils/GetImageExtensionByUri';
 import {Alert} from 'react-native';
 
 const SaveImagesAction = async (images, userId) => {
