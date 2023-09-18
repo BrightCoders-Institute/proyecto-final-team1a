@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import UseFiltersModalState from './UseFiltersModalState';
 import GetDataFromFirebase from './GetDataFromFirebase';
 import GetCurrentUser from './GetCurrentUser';
@@ -6,6 +6,8 @@ import GetUserLikes from './GetUserLikes';
 import FormSendHouse from './formSendHouse';
 
 const UseReusableMainScreenState = screenType => {
+  const [dataVersion, setDataVersion] = useState(0);
+  const [refresh,setRefresh] = useState(false)
   const user = GetCurrentUser();
   const {GetDataFromCollection} = GetDataFromFirebase();
   const [houses, setHouses] = useState([]);
@@ -44,7 +46,7 @@ const UseReusableMainScreenState = screenType => {
       setLoading(false);
     };
     getHouses();
-  }, []);
+  }, [screenType]);
 
   const cancelModalFunction = async () => {
     const response = await GetDataFromCollection('Houses', 'created');
@@ -111,6 +113,22 @@ const UseReusableMainScreenState = screenType => {
     return homeColors[screenType];
   };
 
+
+
+  const onRefresh = async () => {
+    // setDataVersion(prevVersion => prevVersion + 1);
+    setHouses([]);
+    setRefresh(!refresh);
+    const getHouses = async () => {
+      const response = await functionsGetData[screenType];
+      setHouses(response);
+      setLoading(false);
+    };
+    getHouses();
+    setRefresh(!refresh);
+  
+  };
+
   return {
     houses,
     search,
@@ -128,6 +146,10 @@ const UseReusableMainScreenState = screenType => {
     closeHouseForm,
     addHouseFunction,
     clearSearch,
+    onRefresh,
+    refresh,
+    setHouses,
+    functionsGetData
   };
 };
 

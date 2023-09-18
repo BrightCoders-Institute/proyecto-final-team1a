@@ -1,17 +1,18 @@
 import React from 'react';
-import {FlatList, SafeAreaView} from 'react-native';
+import {FlatList, View} from 'react-native';
 import Card from './card';
 
-const Lista = ({data}) => {
+const Lista = ({data, refresh}) => {
   const renderItem = ({item}) => <Card propiedad={item} />;
   return (
-    <SafeAreaView>
+    <View style={{marginBottom: 80}}>
       <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        extraData={refresh}
       />
-    </SafeAreaView>
+    </View>
   );
 };
 
