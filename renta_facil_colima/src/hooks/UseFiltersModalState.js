@@ -7,13 +7,11 @@ const UseFiltersModalState = () => {
   const [bathsNumber, setBathsNumber] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [location, setLocation] = useState('');
   const numbersRegex = /^[0-9]*\.?[0-9]+$/;
 
   const searchFilters = () => {
     if (ValidateModalFields()) {
-      // Future logic to search with filters
-      return true;
+      return filtersObject();
     } else {
       return false;
     }
@@ -55,6 +53,23 @@ const UseFiltersModalState = () => {
     return true;
   };
 
+  const filtersObject = () => {
+    const array = [];
+    if (roomsNumber !== '') {
+      array.push({field: 'rooms', operator: '==', value: roomsNumber});
+    }
+    if (bathsNumber !== '') {
+      array.push({field: 'bathrooms', operator: '==', value: bathsNumber});
+    }
+    if (minPrice !== '') {
+      array.push({field: 'rent', operator: '>=', value: parseFloat(minPrice)});
+    }
+    if (maxPrice !== '') {
+      array.push({field: 'rent', operator: '<=', value: parseFloat(maxPrice)});
+    }
+    return array;
+  }
+
   return {
     modalVisible,
     setModalVisible,
@@ -66,8 +81,6 @@ const UseFiltersModalState = () => {
     setMinPrice,
     maxPrice,
     setMaxPrice,
-    location,
-    setLocation,
     searchFilters,
     openModal,
     closeModal,

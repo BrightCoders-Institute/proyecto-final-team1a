@@ -7,7 +7,6 @@ import FiltersModal from '../components/FiltersModal';
 import {ActivityIndicator} from 'react-native-paper';
 import FormAdd from '../components/formAdd';
 import UseReusableMainScreenState from '../../hooks/UseReusableMainScreenState';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {FAB} from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 const ReusableMainScreen = ({route}) => {
@@ -27,6 +26,7 @@ const ReusableMainScreen = ({route}) => {
     isVisible,
     closeHouseForm,
     addHouseFunction,
+    clearSearch,
     onRefresh,
     setHouses,
     refresh,
@@ -61,6 +61,7 @@ const ReusableMainScreen = ({route}) => {
         {screenType === 'HOME' && (
           <SearchBar
             value={search}
+            clearFunction={clearSearch}
             onChangeText={setSearch}
             openFilters={openFiltersModal}
             searchFunction={handleSearch}

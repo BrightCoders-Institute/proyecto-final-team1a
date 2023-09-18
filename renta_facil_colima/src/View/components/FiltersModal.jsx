@@ -15,8 +15,6 @@ const FiltersModal = ({cancelFunction, modalVisible, onSearchFilter}) => {
     setMinPrice,
     maxPrice,
     setMaxPrice,
-    location,
-    setLocation,
     searchFilters,
   } = UseFiltersModalState();
   return (
@@ -56,14 +54,6 @@ const FiltersModal = ({cancelFunction, modalVisible, onSearchFilter}) => {
               placeholder="Max price"
             />
           </View>
-        </View>
-        <View style={FiltersModalStyle.inputCol}>
-          <Textinput
-            altura={49}
-            value={location}
-            onChangeText={setLocation}
-            placeholder="Address"
-          />
         </View>
         <View style={FiltersModalStyle.row}>
           <BasicButton
