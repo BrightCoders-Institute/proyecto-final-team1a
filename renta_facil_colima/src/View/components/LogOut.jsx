@@ -7,12 +7,9 @@ import handleLogOut from '../../hooks/HandleLogOut';
 const LogOut = () => {
   const navigation = useNavigation();
 
-
-  
   const HandleAction = () => {
-
     handleLogOut();
-    navigation.replace("Start");
+    navigation.replace('Start');
   };
 
   return (

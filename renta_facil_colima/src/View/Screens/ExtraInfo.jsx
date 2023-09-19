@@ -32,6 +32,7 @@ const ExtraInfo = ({navigation}) => {
           address: values.address,
           birthday: values.birthday,
           activeAccount: true,
+          profilePicture: values.profilePicture,
         };
 
         const docSnapshot = await userDocRef.get();
