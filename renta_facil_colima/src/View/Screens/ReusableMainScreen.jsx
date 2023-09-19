@@ -33,8 +33,6 @@ const ReusableMainScreen = ({route}) => {
     setLoading,
     functionsGetData,
   } = UseReusableMainScreenState(screenType);
-
-  const insets = useSafeAreaInsets();
   const navigation = useNavigation();
   
   return (
